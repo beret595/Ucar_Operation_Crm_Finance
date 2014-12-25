@@ -1,0 +1,42 @@
+【interview_list】--出单后也当作一次联系进行记录，出单要求出单的信息不能为空
+interviewlistID 联系记录ID
+personInfoID 客户ID
+interViewTime 联系时间
+agentid 用户ID
+contact_state 联系状态
+failReason  失败原因
+comment 电话联系情况描述
+remark 备注
+createTime 录入系统时间
+insuranceFees 保费
+returePoint 返利点
+insuanceCompany 保险公司
+compayid 保险公司ID
+profit利润
+renewingConverageDate 保险到期时间 
+single_date 出单时间
+viewDate 预约到店日期
+viewTime  时间（文字描述）
+
+【hdb_caseInfo】/*客户表中冗余存储 最后一次联系状态，失败原因，保险到期日期*/
+id 客户ID
+customerNum 客户编号 未启用
+company
+personName 客户姓名
+gender 性别
+phone 电话
+area 所属区域
+address 联系地址
+brand 品牌（下拉）
+model 车型 （描述）
+VIN 车架号
+licensePlate 牌照
+introducer 介绍人
+salesDate 购车日期
+contactState 联系状态（最后一次，详细联系过程在联系过程表中）
+failedReason 失败原因
+expire_Date 保险到期时间 
+insuranceCompany 保险公司
+compayid 保险公司ID
+insuranceFees 保费
+lastUpdate 最后一次联系时间

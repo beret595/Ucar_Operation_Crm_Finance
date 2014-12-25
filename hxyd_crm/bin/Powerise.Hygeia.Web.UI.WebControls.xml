@@ -1,0 +1,2184 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Powerise.Hygeia.Web.UI.WebControls</name>
+    </assembly>
+    <members>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.BasePage">
+              <summary> 
+              BasePage   基础页面类，包含通用方法和属性。 
+              </summary> 
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.OnInit(System.EventArgs)">
+            <summary>
+            重载初始化（权限校验）
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.OnLoad(System.EventArgs)">
+            <summary>
+            重载加载页面（用户校验）
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.OnUnload(System.EventArgs)">
+            <summary>
+            重载清理操作
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.DownloadFile(System.String)">
+              <summary> 
+              下载文件 
+              </summary> 
+              <param name="strFullPath">下载路径</param> 
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.GetDataRight">
+            <summary>
+            获取用户权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.Commit">
+            <summary>
+            提交数据库事务
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.Rollback">
+            <summary>
+            回滚数据库事务
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BasePage.Free">
+            <summary>
+            释放数据库资源
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.IsCheckRight">
+            <summary>
+            是否检查权限（缺省检查）
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.CurrentUserInfo">
+              <summary> 
+              当前用户,检查header或者cookie获取 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.CurrentUserID">
+              <summary> 
+              获取当前用户的ID 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.UserInfo">
+              <summary> 
+              获取当前用户的信息 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.RootURL">
+              <summary> 
+              根路径 
+             </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.RelativePath">
+            <summary>
+            页面相对路径
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.LoginPage">
+              <summary> 
+              错误时转到的登录页面 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.NoPopedom">
+              <summary> 
+              没有权限时转到该页面 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.Logout">
+              <summary> 
+              退出 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.TempFilePath">
+              <summary> 
+              存放临时文件的路径 
+              </summary> 
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.Connection">
+            <summary>
+            数据库连接
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BasePage.Transaction">
+            <summary>
+            数据库事务
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.BusinessErrorHandlerType">
+            <summary>
+            操作类型枚举
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.BusinessErrorHandlerType.ALERT_MESSAGE">
+            <summary>
+            弹出消息框
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.BusinessErrorHandlerType.DISPLAY_MESSAGE">
+            <summary>
+            显示消息
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.BusinessError">
+            <summary>
+            业务层功能调用错误处理控件
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.BusinessError.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            将此控件呈现给指定的输出参数。
+            </summary>
+            <param name="output"> 要写出到的 HTML 编写器 </param>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BusinessError.cssClass">
+            <summary>
+            控件css类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BusinessError.HandlerType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.BusinessError.CallError">
+            <summary>
+            错误对象
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper">
+            <summary>
+            DataGrid辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setStyle(System.Web.UI.WebControls.DataGrid)">
+            <summary>
+            设置DataGrid显示风格(表头不固定)
+            如果需要修改全局DataGrid的样式，请在style.config中维护Default_DataGrid的设置
+            </summary>
+            <param name="dg">DataGrid对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setStyle(System.Web.UI.WebControls.DataGrid,System.Boolean)">
+            <summary>
+            设置DataGrid显示风格(可设置表头固定)
+            可以设置表头是否固定，使用固定表头请使用DIV(style="OVERFLOW: auto; HEIGHT: 360px")包含DataGrid对象
+            如果需要修改全局DataGrid的样式，请在style.config中维护Default_DataGrid的设置
+            </summary>
+            <param name="dg">DataGrid对象</param>
+            <param name="fixedheader">是否固定表头</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.initStyle(System.Web.UI.WebControls.DataGrid,System.Boolean)">
+            <summary>
+            初始化DataGrid显示风格
+            </summary>
+            <param name="dg">DataGrid对象</param>
+            <param name="fixedheader">是否固定表头</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setStyle(System.Web.UI.WebControls.DataGrid,System.String,System.Boolean)">
+            <summary>
+            设置DataGrid显示风格
+            </summary>
+            <param name="dg">DataGrid对象</param>
+            <param name="stylename">样式前缀名称</param>
+            <param name="fixedheader">是否固定表头</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.DG_ItemDataBound(System.Object,System.Web.UI.WebControls.DataGridItemEventArgs)">
+            <summary>
+            在项被数据绑定到 DataGrid 控件后发生
+            </summary>
+            <param name="sender">触发事件的对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setSort(System.Web.UI.WebControls.DataGrid)">
+            <summary>
+            设置DataGrid排序(不需要排序的列，请维护SortExpression="no")
+            </summary>
+            <param name="dg">DataGrid对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.DG_ItemSortBound(System.Object,System.Web.UI.WebControls.DataGridItemEventArgs)">
+            <summary>
+            在项被数据绑定到 DataGrid 控件后发生
+            </summary>
+            <param name="sender">触发事件的对象</param>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.bindData(System.Web.UI.WebControls.DataGrid,System.Object)">
+            <summary>
+            将数据源绑定到DataGrid控件
+            </summary>
+            <param name="dg">DataGrid对象</param>
+            <param name="dataSource">数据源</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.bindData(System.Web.UI.WebControls.Repeater,System.Object)">
+            <summary>
+            将数据源绑定到Repeater控件
+            </summary>
+            <param name="rep">Repeater对象</param>
+            <param name="dataSource">数据源</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.bindData(System.Web.UI.WebControls.DataGrid,System.Object,Powerise.Hygeia.Web.UI.WebControls.Pager)">
+            <summary>
+            将数据源绑定到DataGrid控件[此方法将会在以后的版本中废除]
+            </summary>
+            <param name="dg">DataGrid对象</param>
+            <param name="dataSource">数据源</param>
+            <param name="pager">DataGrid辅助对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setNull(System.Web.UI.WebControls.DataGrid)">
+            <summary>
+            将指定的DataGrid设置为空（保留列头标题）
+            </summary>
+            <param name="dg">DataGrid对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridHelper.setNull(System.Web.UI.WebControls.Repeater)">
+            <summary>
+            将指定的Repeater设置为空（保留列头标题）
+            </summary>
+            <param name="rep">Repeater对象</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPager">
+            <summary>
+            专用于ASP.Net Web应用程序的分页控件
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.setStyle">
+            <summary>
+            设置对象的样式
+            如果需要修改全局DataGridPager的样式，请在style.config中维护Default_DataGrid的设置
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.setStyle(System.String)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="stylename">样式前缀名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.OnInit(System.EventArgs)">
+            <summary>
+            控件初始化时发生
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.OnLoad(System.EventArgs)">
+            <summary>
+            控件加载到 Page 对象中时发生
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.OnPreRender(System.EventArgs)">
+            <summary>
+            当控件将要呈现给其包含的 Page 对象时发生
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            将属性添加到控件
+            </summary>
+            <param name="writer">HTML输入流</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            开始编写在客户端呈现的内容
+            </summary>
+            <param name="writer">HTML输入流</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            结束编写在客户端呈现的内容
+            </summary>
+            <param name="writer">HTML输入流</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            编写在客户端呈现的内容
+            </summary>
+            <param name="writer">HTML输入流</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.WriteCellAttributes(System.Web.UI.HtmlTextWriter,System.Boolean)">
+            <summary>
+            Add attributes to the cell of CustomInfoSection or navigation buttons section.
+            </summary>
+            <param name="writer"></param>
+            <param name="leftCell"></param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.GetHrefString(System.Int32)">
+            <summary>
+            Get the navigation url for the paging button.
+            </summary>
+            <param name="pageIndex">the page index correspond to the button.</param>
+            <returns>href string for the paging navigation button.</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.GetCustomInfoText(System.String)">
+            <summary>
+            Replace the property placeholder in the CustomInfoText with the property value repectively
+            </summary>
+            <param name="origText">original CustomInfoText</param>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.BuildUrlString(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            add paging parameter and value to the current url or change parameter value if it already exists when using url paging mode
+            </summary>
+            <param name="col">url parameter collection to be added to the current url</param>
+            <returns>href string for the navigattion buttn</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CreateNavigationButton(System.Web.UI.HtmlTextWriter,System.String)">
+            <summary>
+            Create first, prev, next or last button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="btnname">the button name</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.WriteCssClass(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Write css class name.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client. </param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.AddToolTip(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            Add tool tip text to navigation button.
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CreateNumericButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            Create numeric paging button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="index">the page index correspond to the paging button</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CreateNumericImages(System.Web.UI.HtmlTextWriter,System.Int32,System.Boolean)">
+            <summary>
+            Create numeric image button.
+            </summary>
+            <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter"/> that represents the output stream to render HTML content on the client.</param>
+            <param name="index">the page index correspond to the button.</param>
+            <param name="isCurrent">if the page index correspond to the button is the current page index</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CreateMoreButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            create more (...) button.
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.writeSpacingStyle(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            Add paging button spacing styles to HtmlTextWriter
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RaisePostBackEvent(System.String)">
+            <summary>
+            实现<see cref="T:System.Web.UI.IPostBackEventHandler"/> 接口，使 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPager"/> 控件能够处理将窗体发送到服务器时引发的事件
+            </summary>
+            <param name="args">表示要传递到事件处理程序的可选事件参数的 String</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            实现 <see cref="T:System.Web.UI.IPostBackDataHandler"/> 接口，为 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPager"/> 服务器控件处理回发数据
+            </summary>
+            <param name="pkey">控件的主要标识符。</param>
+            <param name="pcol">所有传入名称值的集合。</param>
+            <returns>如果控件的状态在回发发生后更改，则为 true；否则为 false</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RaisePostDataChangedEvent">
+            <summary>
+            实现 <see cref="T:System.Web.UI.IPostBackDataHandler"/> 接口，用信号要求服务器控件对象通知 ASP.NET 应用程序该控件的状态已更改
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.OnPageChanging(Powerise.Hygeia.Web.UI.WebControls.PageChangingEventArgs)">
+            <summary>
+            表示处理 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageChanging"/> 事件的方法。
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.OnPageChanged(System.EventArgs)">
+            <summary>
+            表示处理 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageChanged"/> 事件的方法。
+            </summary>
+            <param name="e">事件对象</param>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowNavigationToolTip">
+            <summary>
+            指定当鼠标停留在导航按钮上时，是否显示工具提示
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NavigationToolTipTextFormatString">
+            <summary>
+            分页导航按钮上显示的提示文本的格式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NumericButtonTextFormatString">
+            <summary>
+            页索引数值按钮上文字的显示格式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PagingButtonType">
+            <summary>
+            分页导航按钮的类型，是使用文字还是图片
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NumericButtonType">
+            <summary>
+            页导航数值按钮的类型
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NavigationButtonType">
+            <summary>
+            第一页、上一页、下一页和最后一页按钮的类型
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.MoreButtonType">
+            <summary>
+            “更多页”（...）按钮的类型
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.MoreButtonText">
+            <summary>
+            更多页按钮上显示的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PagingButtonSpacing">
+            <summary>
+            分页导航按钮之间的间距
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowFirstLast">
+            <summary>
+            是否在页导航元素中显示第一页和最后一页按钮
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowPrevNext">
+            <summary>
+            是否在页导航元素中显示上一页和下一页按钮
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowPageIndex">
+            <summary>
+            是否在页导航元素中显示数值按钮
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowMoreButton">
+            <summary>
+            是否在页导航元素中显示更多页按钮
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.FirstPageText">
+            <summary>
+            第一页按钮上显示的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PrevPageText">
+            <summary>
+            上一页按钮上显示的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NextPageText">
+            <summary>
+            下一页按钮上显示的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.LastPageText">
+            <summary>
+            最后一页按钮上显示的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.NumericButtonCount">
+            <summary>
+            要显示的页索引数值按钮的数目
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowDisabledButtons">
+            <summary>
+            是否显示已禁用的按钮
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ImagePath">
+            <summary>
+            当使用图片按钮时，指定图片文件的路径
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ButtonImageExtension">
+            <summary>
+            当使用图片按钮时，图片的类型，如gif或jpg，该值即图片文件的后缀名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ButtonImageNameExtension">
+            <summary>
+            自定义图片文件名的后缀字符串（非文件后缀名），如图片“1f.gif”的ButtonImageNameExtension即为“f”
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CpiButtonImageNameExtension">
+            <summary>
+            当前页索引按钮的图片名后缀字符串
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.DisabledButtonImageNameExtension">
+            <summary>
+            已禁用的页导航按钮的图片名后缀字符串
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ButtonImageAlign">
+            <summary>
+            指定当使用图片按钮时，图片的对齐方式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.UrlPaging">
+            <summary>
+            是否使用url传递分页信息的方式来分页
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.UrlPageIndexName">
+            <summary>
+            当启用Url分页方式时，显示在url中表示要传递的页索引的参数的名称
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CurrentPageIndex">
+            <summary>
+            当前页的索引
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RecordCount">
+            <summary>
+            要分页的所有记录的总数，该值须在程序运行时设置，默认值为225是为设计时支持而设置的参照值
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PagesRemain">
+            <summary>
+            剩余页数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageSize">
+            <summary>
+            每页记录数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.RecordsRemain">
+            <summary>
+            剩余记录数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.StartRecordIndex">
+            <summary>
+            起始记录数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.EndRecordIndex">
+            <summary>
+            结束记录数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageCount">
+            <summary>
+            页数
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowInputBox">
+            <summary>
+            指定页索引文本框的显示方式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.InputBoxClass">
+            <summary>
+            应用于页索引输入文本框的CSS类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.InputBoxStyle">
+            <summary>
+            应用于页索引输入文本框的CSS样式文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.TextBeforeInputBox">
+            <summary>
+            页索引输入文本框前的文本内容字符串
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.TextAfterInputBox">
+            <summary>
+            页索引输入文本框后的文本内容字符串
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.SubmitButtonText">
+            <summary>
+            提交按钮上的文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.SubmitButtonClass">
+            <summary>
+            应用于提交按钮的CSS类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.SubmitButtonStyle">
+            <summary>
+            应用于提交按钮的CSS样式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowBoxThreshold">
+            <summary>
+            指定当ShowInputBox设为ShowInputBox.Auto时，当总页数达到多少时才显示页索引输入文本框
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.ShowCustomInfoSection">
+            <summary>
+            显示当前页和总页数信息，默认值为不显示，值为ShowCustomInfoSection.Left时将显示在页索引前，为ShowCustomInfoSection.Right时将显示在页索引后
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CustomInfoTextAlign">
+            <summary>
+            用户自定义信息区文本的对齐方式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CustomInfoSectionWidth">
+            <summary>
+            用户自定义信息区的宽度
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CustomInfoClass">
+            <summary>
+            应用于用户自定义信息区的级联样式表类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CustomInfoStyle">
+            <summary>
+            应用于用户自定义信息区的CSS样式文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CustomInfoHTML">
+            <summary>
+            要显示在用户自定义信息区的用户自定义HTML信息文本
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageNavigationClass">
+            <summary>
+            应用于页面导航区的CSS类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageNavigationSpacing">
+            <summary>
+            分页导航按钮之间的间距
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CloneFrom">
+            <summary>
+            克隆指定的另一个AspNetPager的相关属性及事件处理程序等
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.EnableUrlRewriting">
+            <summary>
+            是否启用Url重写
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.UrlRewritePattern">
+            <summary>
+            Url重写格式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.AlwaysShow">
+            <summary>
+            总是显示分页控件，即使要分页的数据只要一页
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CssClass">
+            <summary>
+            应用于控件的CSS类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.Wrap">
+            <summary>
+            wrap属性
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageIndexOutOfRangeErrorMessage">
+            <summary>
+            当用户输入的页索引超出范围（大于最大页索引或小于最小页索引）时在客户端显示的错误信息
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.InvalidPageIndexErrorMessage">
+            <summary>
+            当用户输入无效的页索引（负值或非数字）时在客户端显示的错误信息
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CurrentPageButtonStyle">
+            <summary>
+            应用于当前页导航按钮的CSS样式
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.CurrentPageButtonClass">
+            <summary>
+            应用于当前页导航按钮的CSS类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.DisabledButtonClass">
+            <summary>
+            应用于禁用导航按钮的CSS类名
+            </summary>
+        </member>
+        <member name="E:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageChanging">
+            <summary>
+            当页导航元素之一被单击或用户手工输入页索引正在提交时发生。
+            </summary>
+        </member>
+        <member name="E:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageChanged">
+            <summary>
+            当页导航元素之一被单击或用户手工输入页索引提交时发生。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PageChangingEventHandler">
+            <summary>
+            表示处理 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.DataGridPager.PageChanging"/> 事件的方法。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PageChangingEventArgs">
+            <summary>
+            取消当前的分页事件
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageChangingEventArgs.#ctor(System.Int32)">
+            <summary>
+            使用新页面索引初始化 PageChangedEventArgs 类的新实例。
+            </summary>
+            <param name="newPageIndex">用户从 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPager"/> 控件的页选择元素选定的或在页索引文本框中手工输入的页的索引。</param>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.PageChangingEventArgs.NewPageIndex">
+            <summary>
+            新页面索引
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPagerDesigner">
+            <summary>
+            <see cref="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPager"/> 服务器控件设计器。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPagerDesigner.#ctor">
+            <summary>
+            初始化 DataGridPagerDesigner 的新实例。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPagerDesigner.GetDesignTimeHtml">
+            <summary>
+            获取用于在设计时表示关联控件的 HTML。
+            </summary>
+            <returns>用于在设计时表示控件的 HTML。</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataGridPagerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            获取在呈现控件时遇到错误后在设计时为指定的异常显示的 HTML。
+            </summary>
+            <param name="e">要为其显示错误信息的异常。</param>
+            <returns>设计时为指定的异常显示的 HTML。</returns>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataGridPagerIDConverter">
+            <summary>
+            DataGridPager type converter used for the design time support
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataWindow">
+            <summary>
+            数据窗口控件。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindow.addChildDataWindow(System.String,System.String,System.Data.DataTable)">
+            <summary>
+            增加子数据窗口
+            </summary>
+            <param name="strColName">列名</param>
+            <param name="strDwName">子数据窗口名称</param>
+            <param name="dtData">子数据窗口数据</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindow.Render(System.Web.UI.HtmlTextWriter)">
+            <summary> 
+            将此控件呈现给指定的输出参数。
+            </summary>
+            <param name="output"> 要写出到的 HTML 编写器 </param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindow.getImportString(System.String,System.Data.DataTable)">
+            <summary>
+            获取导入数据窗口字符串
+            </summary>
+            <param name="strColList">列集合（多列逗号分隔）</param>
+            <param name="dtData">数据表</param>
+            <returns>数据窗口数据字符串</returns>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.DataWindowName">
+            <summary>
+            数据窗口名称
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.Caption">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.CssClass">
+            <summary>
+            css类名
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.CodeBasePath">
+            <summary>
+            控件下载地址
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.FileBasePath">
+            <summary>
+            数据窗口文件路径（pbl或pbd）
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.DataWindow.Data">
+            <summary>
+            数据（DataTable格式）
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DataWindowHelper">
+            <summary>
+            数据窗口辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindowHelper.parseData(System.String,System.String)">
+            <summary>
+            将传入的数据窗口数据解析成ArrayList
+            </summary>
+            <param name="strDataWindowName">在数据库中定义的数据窗口名</param>
+            <param name="strData">数据窗口数据，行之间以\r\n分隔，各列之间以\t分隔</param>
+            <returns>解析后的ArrayList</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindowHelper.parseData(System.String,System.String,System.String)">
+            <summary>
+            将传入的数据窗口数据解析成ArrayList（可以指定数据的列）
+            </summary>
+            <param name="strDataWindowName">在数据库中定义的数据窗口名</param>
+            <param name="strData">数据窗口数据，行之间以\r\n分隔，各列之间以\t分隔</param>
+            <param name="strColList">以,分隔的列的列表</param>
+            <returns>解析后的ArrayList</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindowHelper.createImportData(System.String,System.Data.DataTable)">
+            <summary>
+            将传入的数据窗口名称和数据表生成导入数据窗口的字符串
+            </summary>
+            <param name="strDataWindowName">数据窗口名称</param>
+            <param name="dtData">数据表</param>
+            <returns>数据窗口数据字符串</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DataWindowHelper.createImportData(System.Data.DataTable,System.String)">
+            <summary>
+            将传入的列集合和数据表生成导入数据窗口的字符串
+            </summary>
+            <param name="dtData">数据表</param>
+            <param name="strColList">列集合（多列逗号分隔）</param>
+            <returns>数据窗口数据字符串</returns>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper">
+            <summary>
+            DropDownList辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindData(System.Web.UI.WebControls.DropDownList,System.Data.DataTable)">
+            <summary>
+            绑定数据
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="dt">数据表</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindDataFromCodeTable(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            从业务字典绑定数据
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="colName">业务字典对应名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindDataFromCodeTable(System.Web.UI.WebControls.DropDownList,System.String,System.String)">
+            <summary>
+            从业务字典绑定数据（中心过滤）
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="colName">业务字典对应名称</param>
+            <param name="CenterId">中心编号</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindDataFromCodeTable(System.Web.UI.WebControls.DropDownList,System.String,System.String,System.String)">
+            <summary>
+            从业务字典绑定数据，并且增加一条空数据
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="colName">业务字典对应名称</param>
+            <param name="blankRowValue">空行数据</param>
+            <param name="blankRowText">空行文本</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindDataFromCodeTable(System.Web.UI.WebControls.DropDownList,System.String,System.String,System.String,System.String)">
+            <summary>
+            从业务字典绑定数据，并且增加一条空数据（中心过滤）
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="colName">业务字典对应名称</param>
+            <param name="CenterId">中心编号</param>
+            <param name="blankRowValue">空行数据</param>
+            <param name="blankRowText">空行文本</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.bindDataFromCodeTable(System.Web.UI.WebControls.DropDownList,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            从业务字典绑定数据，并且增加一条数据
+            </summary>
+            <param name="dropDownList">下拉框对象</param>
+            <param name="colName">业务字典对应名称</param>
+            <param name="rowFilter">过滤表达式</param>
+            <param name="sort">排序</param>
+            <param name="addRowValue">新增行数据(如果为空将不处理）</param>
+            <param name="addRowText">新增行文本(如果为空将不处理）</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.selectItemFromValue(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            根据指定值选择条目
+            </summary>
+            <param name="dropDownList">下拉列表框</param>
+            <param name="itemValue">指定值</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.DropDownListHelper.selectItemFromText(System.Web.UI.WebControls.DropDownList,System.String)">
+            <summary>
+            根据指定文本选择条目
+            </summary>
+            <param name="dropDownList">下拉列表框</param>
+            <param name="itemText">指定值</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.ScriptPos">
+            <summary>
+            脚本位置
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ScriptPos.Head">
+            <summary>
+            页面头
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ScriptPos.Begin">
+            <summary>
+             form开始
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ScriptPos.End">
+            <summary>
+            form结束
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper">
+            <summary>
+            JavaScript辅助类。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.JAVASCRIPT_FORMAT">
+            <summary>
+            js脚本格式化字符串
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.ALERT_MESSAGE">
+            <summary>
+            alert消息格式化字符串
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.SCROLLROW_FORMAT">
+            <summary>
+            行定位格式化字符串
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.SCROLLOBJECT_FORMAT">
+            <summary>
+            对象定位格式化字符串
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.FOCUSOBJECT_FORMAT">
+            <summary>
+            对象集聚格式化字符串
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.AlertMessage(System.Web.UI.Page,System.String)">
+            <summary>
+            弹出消息
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="message">消息内容</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.AlertMessage(System.Web.UI.Page,System.String,System.Exception)">
+            <summary>
+            弹出消息
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="message">消息内容</param>
+            <param name="e">异常</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.AlertMessage(System.Web.UI.Page,Powerise.Hygeia.Framework.ErrorObj)">
+            <summary>
+            弹出消息
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="err">错误对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.RunScript(System.Web.UI.Page,Powerise.Hygeia.Web.UI.WebControls.ScriptPos,System.String)">
+            <summary>
+            在客户端运行脚本
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="pos">脚本运行的位置</param>
+            <param name="script">脚本的内容（不用包括 script元素）</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.AlertEncode(System.String)">
+            <summary>
+            编码消息为setTimeout(Alert)标准的字符串（替换转义符）
+            </summary>
+            <param name="messgae">消息文本</param>
+            <returns>编码后的消息</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.MessageDecode(System.String)">
+            <summary>
+            解码消息为Alert标准的字符串（删除转义符）
+            </summary>
+            <param name="messgae">消息文本</param>
+            <returns>解码后文本</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.MessageEncode(System.String)">
+            <summary>
+            编码消息为Alert标准的字符串（替换转义符）
+            </summary>
+            <param name="messgae">消息文本</param>
+            <returns>编码后的消息</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.ScrollToRow(System.Web.UI.Page,System.String,System.Int32)">
+            <summary>
+            滚动屏幕到表格的指定行
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="tablename">表格名称</param>
+            <param name="row">行号</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.ScrollToObject(System.Web.UI.Page,System.String)">
+            <summary>
+            滚动屏幕到指定对象
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="name">对象名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.JavaScriptHelper.FocusObject(System.Web.UI.Page,System.String)">
+            <summary>
+            聚焦指定对象
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="name">对象名称</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PageHelper">
+            <summary>
+            页面Page对象辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getIpAddress(System.Web.UI.Page)">
+            <summary>
+            获取页面的ip地址
+            </summary>
+            <param name="page">页面对象</param>
+            <returns>IP地址</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getIpAddress(System.Web.HttpRequest)">
+            <summary>
+            获取请求的IP地址
+            </summary>
+            <param name="request">请求对象</param>
+            <returns>IP地址</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getRelativePath(System.Web.UI.Page)">
+            <summary>
+            获取页面相对路径
+            </summary>
+            <param name="page">页面对象</param>
+            <returns>相对路径</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getRelativePath(System.Web.HttpRequest)">
+            <summary>
+            获取页面相对路径
+            </summary>
+            <param name="request">请求对象</param>
+            <returns>相对路径</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getRootURL(System.Web.UI.Page)">
+            <summary>
+            获取页面根地址
+            </summary>
+            <param name="page">页面对象</param>
+            <returns>根地址</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getQueryString(System.Web.UI.Page,System.String)">
+            <summary>
+            获取查询字符串
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="name">查询名</param>
+            <returns>查询值（不存在返回空字符串）</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getQueryString(System.Web.HttpRequest,System.String)">
+            <summary>
+            获取查询字符串
+            </summary>
+            <param name="request">请求对象</param>
+            <param name="name">查询名</param>
+            <returns>查询值（不存在返回空字符串）</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getQueryString(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            获取查询字符串
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="name">查询名</param>
+            <param name="value">缺省值</param>
+            <returns>查询值（不存在返回缺省值）</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.getQueryString(System.Web.HttpRequest,System.String,System.String)">
+            <summary>
+            获取查询字符串
+            </summary>
+            <param name="request">请求对象</param>
+            <param name="name">查询名</param>
+            <param name="value">缺省值</param>
+            <returns>查询值（不存在返回缺省值）</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.downloadFile(System.Web.UI.Page,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="filepath">服务器文件物理路径</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.downloadFile(System.Web.UI.Page,System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="filepath">服务器文件物理路径</param>
+            <param name="delflag">是否删除文件</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.downloadFile(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="filepath">服务器文件物理路径</param>
+            <param name="filename">文件名（为空使用实际文件名）</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageHelper.downloadFile(System.Web.UI.Page,System.String,System.String,System.Boolean)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="page">页面对象</param>
+            <param name="filepath">服务器文件物理路径</param>
+            <param name="filename">文件名（为空使用实际文件名）</param>
+            <param name="delflag">是否删除文件</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.Pager">
+            <summary>
+            专用于ASP.Net Web应用程序的分页控件[此类将会在以后的版本中废除，请使用DataGridPager]
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.Pager._dataGrid">
+            <summary>
+            保存绑定的DataGrid
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.OnSetDataGrid">
+            <summary>
+            自定义初始化
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.SetRecordCount">
+            <summary>
+            设置本类中的RecordCount属性
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.OnLoad(System.EventArgs)">
+            <summary>
+            重写 <see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)"/> 方法。
+            </summary>
+            <param name="e">包含事件数据的 <see cref="T:System.EventArgs"/> 对象。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.OnPreRender(System.EventArgs)">
+            <summary>
+            重写<see cref="M:System.Web.UI.Control.OnPreRender(System.EventArgs)"/>方法。
+            </summary>
+            <param name="e">包含事件数据的 <see cref="T:System.EventArgs"/> 对象。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.AddAttributesToRender(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写<see cref="M:System.Web.UI.WebControls.WebControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)"/> 方法，将需要呈现的 HTML 属性和样式添加到指定的 <see cref="T:System.Web.UI.HtmlTextWriter"/> 中
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.RenderBeginTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写 <see cref="M:System.Web.UI.WebControls.WebControl.RenderBeginTag(System.Web.UI.HtmlTextWriter)"/> 方法，将 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的 HTML 开始标记输出到指定的 <see cref="T:System.Web.UI.HtmlTextWriter"/> 编写器中。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.RenderEndTag(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写 <see cref="M:System.Web.UI.WebControls.WebControl.RenderEndTag(System.Web.UI.HtmlTextWriter)"/> 方法，将 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的 HTML 结束标记输出到指定的 <see cref="T:System.Web.UI.HtmlTextWriter"/> 编写器中。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.RenderContents(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            重写 <see cref="M:System.Web.UI.WebControls.WebControl.RenderContents(System.Web.UI.HtmlTextWriter)"/> 方法，将控件的内容呈现到指定 <see cref="T:System.Web.UI.HtmlTextWriter"/> 的编写器中。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.GetStyleString">
+            <summary>
+            将基控件的Style转换为CSS字符串。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.WriteCellAttributes(System.Web.UI.HtmlTextWriter,System.Boolean)">
+            <summary>
+            为用户自定义信息区和页导航按钮区和td添加属性。
+            </summary>
+            <param name="writer"></param>
+            <param name="leftCell">是否为第一个td</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.GetHrefString(System.Int32)">
+            <summary>
+            获取分页导航按钮的超链接字符串。
+            </summary>
+            <param name="pageIndex">该分页按钮相对应的页索引。</param>
+            <returns>分页导航按钮的超链接字符串。</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.BuildUrlString(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            当使用Url分页方式时，在当前Url上加入分页参数，若该参数存在，则改变其值。
+            </summary>
+            <param name="col">要加入到新Url中的参数名和值的集合。</param>
+            <returns>分页导航按钮的超链接字符串，包括分页参数。</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.CreateNavigationButton(System.Web.UI.HtmlTextWriter,System.String)">
+            <summary>
+            创建第一页、上一页、下一页及最后一页分页按钮。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+            <param name="btnname">分页按钮名。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.WriteCssClass(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            写入CSS类名。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.AddToolTip(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            加入导航按钮提示文本。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+            <param name="pageIndex">导航按钮对应的页索引。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.CreateNumericButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            创建分页数值导航按钮。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+            <param name="index">要创建按钮的页索引的值。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.WriteButtonSpace(System.Web.UI.HtmlTextWriter)">
+            <summary>
+            在分页导航元素间加入空格。
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.GetChinesePageIndex(System.Int32)">
+            <summary>
+            获取中文页索引字符。
+            </summary>
+            <param name="index">中文字符对应的页索引数值</param>
+            <returns>对应于页索引数值的中文字符</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.CreateNumericImages(System.Web.UI.HtmlTextWriter,System.Int32,System.Boolean)">
+            <summary>
+            创建页索引图片按钮。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+            <param name="index">页索引数值。</param>
+            <param name="isCurrent">是否是当前页索引。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.CreateMoreButton(System.Web.UI.HtmlTextWriter,System.Int32)">
+            <summary>
+            创建“更多页”（...）按钮。
+            </summary>
+            <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter"/>，表示要在客户端呈现 HTML 内容的输出流。</param>
+            <param name="pageIndex">链接到按钮的页的索引。</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.RaisePostBackEvent(System.String)">
+            <summary>
+            实现<see cref="T:System.Web.UI.IPostBackEventHandler"/> 接口，使 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件能够处理将窗体发送到服务器时引发的事件。
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.LoadPostData(System.String,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            实现 <see cref="T:System.Web.UI.IPostBackDataHandler"/> 接口，为 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 服务器控件处理回发数据。
+            </summary>
+            <param name="pkey">控件的主要标识符。</param>
+            <param name="pcol">所有传入名称值的集合。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.RaisePostDataChangedEvent">
+            <summary>
+            实现 <see cref="T:System.Web.UI.IPostBackDataHandler"/> 接口，用信号要求服务器控件对象通知 ASP.NET 应用程序该控件的状态已更改。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.Pager.OnPageChanged(Powerise.Hygeia.Web.UI.WebControls.PageChangedEventArgs)">
+            <summary>
+            引发 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.Pager.PageChanged"/> 事件。这使您可以为事件提供自定义处理程序。
+            </summary>
+            <param name="e">一个 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.PageChangedEventArgs"/>，它包含事件数据。</param>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PointerDataGrid">
+            <summary>
+            获取或设置该控件指向的DataGrid控件
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowNavigationToolTip">
+            <summary>
+            获取或设置一个值，该值批示当鼠标指针悬停在导航按钮上时是否显示工具提示。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NavigationToolTipTextFormatString">
+            <summary>
+            获取或设置导航按钮工具提示文本的格式。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ChinesePageIndex">
+            <summary>
+            获取或设置一个值，该值指示是否将页索引按钮用中文数字代替。
+            </summary>
+            <remarks>
+            将该值设为true并且未使用图片按钮时，页索引按钮中的数值1、2、3等将会被中文字符一、二、三等代替。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NumericButtonTextFormatString">
+            <summary>
+            获取或设置页索引数值导航按钮上文字的显示格式。
+            </summary>
+            <value>
+            字符串，指定页索引数值按钮上文字的显示格式，默认值为<see cref="F:System.String.Empty"/>，即未设置该属性。</value>
+            <remarks>
+            使用NumericButtonTextFormatString属性指定页索引数值按钮的显示格式，如未设置该值时索引按钮文本将会是：1 2 3 ...，设置该值将改变索引按钮文本的显示格式，
+            如将该值设为“[{0}]”则索引文本会显示为：[1] [2] [3] ...，将该值设为“-{0}-”则会使索引文本变为：-1- -2- -3- ...。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PagingButtonType">
+            <summary>
+            获取或设置分页导航按钮的类型，即使用文字还是图片。
+            </summary>
+            <remarks>
+            要使用图片按钮，您需要准备以下图片：从0到9的十个数值图片（当ShowPageIndex设为true时），第一页、上一页、下一页、最后一页及更多页（...）五个按钮图片（当ShowFirstLast及ShowPrevNext都设为true时），
+            若需要使当前页索引的数值按钮不同于别的页索引数值按钮，则还需准备当前页索引的按钮图片；
+            若需要使已禁用的第一页、上一页、下一页及最后一页按钮图片不同于正常的按钮图片，则还需准备这四个按钮在禁用状态下的图片；
+            <p><b>图片文件的命名规则如下：</b></p>
+            <p>从0到9十张数值按钮图片必须命名为“数值+ButtonImageNameExtension+ButtonImageExtension”，其中的ButtonImageNameExtension可以不用设置，
+            ButtonImageExtension是图片文件的后缀名，如 .gif或 .jpg等可以在浏览器中显示的任何图片文件类型。如页索引“1”的图片文件可命名为“1.gif”或“1.jpg”，
+            当您有两套或更多套图片文件时，可以通过指定ButtonImageNameExtension属性值来区分不同套的图片，如第一套图片可以不用设ButtonImageNameExtension，则图片文件名类似于“1.gif”、“2.gif”等等，而第二套图片则设置ButtonImageNameExtension为“f”，图片文件名类似于“1f.gif”，“2f.gif”等等。</p>
+            <p>第一页按钮的图片文件名以“first”开头，上一页按钮图片名以“prev”开头，下一页按钮图片名以“next”开头，最后一页按钮图片名以“last”开头，更多页按钮图片名以“more”开头，是否使用ButtonImageNameExtension取决于数值按钮的设置及是否有更多套图片。</p>
+            </remarks>
+            <example>
+            以下代码片段示例如果使用图片按钮：
+            <p>
+            <code><![CDATA[
+            <Webdiyer:Pager runat="server" 
+            	id="pager1" 
+            	OnPageChanged="ChangePage"  
+            	PagingButtonType="image" 
+            	ImagePath="images" 
+            	ButtonImageNameExtension="n" 
+            	DisabledButtonImageNameExtension="g" 
+            	ButtonImageExtension="gif" 
+            	CpiButtonImageNameExtension="r" 
+            	PagingButtonSpacing=5/>
+            ]]>
+            </code>
+            </p>
+            </example>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NumericButtonType">
+            <summary>
+            获取或设置页导航数值按钮的类型，该值仅当PagingButtonType设为Image时才有效。
+            </summary>
+            <remarks>
+            当您将PagingButtonType设为Image当又不想让页索引数值按钮使用图片时，可以将该值设为Text，这会使页索引数据按钮使用文本而不是图片按钮。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NavigationButtonType">
+            <summary>
+            获取或设置第一页、上一页、下一页和最后一页按钮的类型，该值仅当PagingButtonType设为Image时才有效。
+            </summary>
+            <remarks>
+            当您将PagingButtonType设为Image但又不想让第一页、下一页、下一页和最后一页按钮使用图片，则可以将该值设为Text，这会使前面的四个按钮使用文本而不是图片按钮。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.MoreButtonType">
+            <summary>
+            获取或设置“更多页”（...）按钮的类型，该值仅当PagingButtonType设为Image时才有效。
+            </summary>
+            <remarks>
+            当您将PagingButtonType设为Image但又不想让更多页（...）按钮使用图片时，可以将此值设为Text，这会使更多页按钮使用文本而不是图片按钮。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PagingButtonSpacing">
+            <summary>
+            获取或设置分页导航按钮之间的间距。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowFirstLast">
+            <summary>
+            获取或设置一个值，该值指示是否在页导航元素中显示第一页和最后一页按钮。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowPrevNext">
+            <summary>
+            获取或设置一个值，该值指示是否在页导航元素中显示上一页和下一页按钮。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowPageIndex">
+            <summary>
+            获取或设置一个值，该值指示是否在页导航元素中显示页索引数值按钮。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.FirstPageText">
+            <summary>
+            获取或设置为第一页按钮显示的文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PrevPageText">
+            <summary>
+            获取或设置为上一页按钮显示的文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NextPageText">
+            <summary>
+            获取或设置为下一页按钮显示的文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.LastPageText">
+            <summary>
+            获取或设置为最后一页按钮显示的文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.NumericButtonCount">
+            <summary>
+            获取或设置在 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页导航元素中同时显示的数值按钮的数目。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowDisabledButtons">
+            <summary>
+            获取或设置一个值，该值指定是否显示已禁用的按钮。
+            </summary>
+            <remarks>
+            该值用来指定是否显示已禁用的分页导航按钮，当当前页为第一页时，第一页和上一页按钮将被禁用，当当前页为最后一页时，下一页和最后一页按钮将被禁用，被禁用的按钮没有链接，在按钮上点击也不会有任何作用。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ImagePath">
+            <summary>
+            获取或设置当使用图片按钮时，图片文件的路径。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ButtonImageExtension">
+            <summary>
+            获取或设置当使用图片按钮时，图片的类型，如gif或jpg，该值即图片文件的后缀名。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ButtonImageNameExtension">
+            <summary>
+            获取或设置自定义图片文件名的后缀字符串，以区分不同类型的按钮图片。
+            </summary>
+            <remarks><note>注意：</note>该值不是文件后缀名，而是为区分不同的图片文件而在图片名中加入的字符串，如：
+            当前有两套按钮图片，其中一套中的“1”的图片名可为“1f.gif”，另一套中的“1”的图片名可起为“1n.gif”，其中的f和n即为ButtonImageNameExtension。</remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CpiButtonImageNameExtension">
+            <summary>
+            获取或设置当前页索引按钮的图片名后缀。
+            </summary>
+            <remarks>
+            当 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PagingButtonType"/> 设为 Image 时，该属性允许您设置当前页索引数值按钮使用的图片名后缀字符，因此可以使当前页索引按钮与其它页索引按钮使用不同的图片，若未设置该值，则默认值为<see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ButtonImageNameExtension"/>，即当前页索引按钮与其它页索引按钮使用相同的图片。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.DisabledButtonImageNameExtension">
+            <summary>
+            获取或设置已禁用的页导航按钮图片名后缀字符串。
+            </summary>
+            <remarks>
+            当 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PagingButtonType"/> 设为 Image 时， 该值允许您设置已禁用（即没有链接，因而点击后无反应）的页导航按钮（包括第一页、上一页、下一页、最后一页四个按钮）的图片文件名后缀字符串，因此可以使已禁用的页导航按钮不同于正常的页导航按钮。若未设置该值，则默认值为<see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ButtonImageNameExtension"/>，即已禁用的页导航按钮与正常的页导航按钮使用相同的图片。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ButtonImageAlign">
+            <summary>
+            指定当使用图片按钮时，图片的对齐方式。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.UrlPaging">
+            <summary>
+            获取或设置是否启用url来传递分页信息。
+            </summary>
+            <remarks>
+            启用Url分页方式是将用户欲访问的页索引通过Url来传递，由于该分页方式不使用页面向自身回发来传递数据，
+            所以每次分页时所有的数据都恢复为初始值或需要重新获取。使用Url分页方式不支持动态改变分页控件的属性值，
+            因暂时无法将新的属性值通过Url来传递给下一页。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.UrlPageIndexName">
+            <summary>
+            获取或设置当启用Url分页方式时，在url中表示要传递的页索引的参数的名称。
+            </summary>
+            <remarks>
+            该属性允许您自定义通过Url传递页索引时表示要传递的页索引的参数的名称，以避免与现有的参数名重复。
+            <p>该属性的默认值是“page”，即通过Url分页时，显示在浏览器地址栏中的Url类似于：</p>http://www.webdiyer.com/Pager/samples/datagrid_url.aspx?page=2 
+            <p>如将该值改为“pageindex”，则上面的Url将变为：</p><p>http://www.webdiyer.com/Pager/samples/datagrid_url.aspx?pageindex=2 </p>
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CurrentPageIndex">
+             <summary>
+             获取或设置当前显示页的索引。
+             </summary>
+            <remarks>使用此属性来确定在 Pager 控件中当前显示的页，当前显示的页的数字索引将以红色字体加粗显示。此属性还用于以编程的方式控制所显示的页。
+            <p>　<b>注意：</b>不同于DataGrid控件的CurrentPageIndex，Pager的CurrentPageIndex属性是从1开始的。</p></remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.RecordCount">
+            <summary>
+            获取或设置需要分页的所有记录的总数。
+            </summary>
+            <remarks>
+            当页面第一次加载时，应以编程方式将从存储过程或Sql语句中返回的数据表中所有要分页的记录的总数赋予该属性，Pager会将其保存的ViewState中并在页面回发时从ViewState中获取该值，因此避免了每次分页都要访问数据库而影响分页性能。Pager根据要分页的所有数据的总项数和 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageSize"/> 属性来计算显示所有数据需要的总页数，即 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageCount"/>的值。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PagesRemain">
+            <summary>
+            获取当前页之后未显示的页的总数。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageSize">
+            <summary>
+            获取或设置每页显示的项数。
+            </summary>
+            <remarks>
+            该值获取或设置数据呈现控件每次要显示数据表中的的数据的项数，Pager根据该值和 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.RecordCount"/> 来计算显示所有数据需要的总页数，即 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageCount"/>的值。</remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.RecordsRemain">
+            <summary>
+            获取在当前页之后还未显示的剩余记录的项数。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageCount">
+            <summary>
+            获取所有要分页的记录需要的总页数。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowInputBox">
+             <summary>
+             获取或设置页索引文本框的显示方式。
+             </summary>
+             <remarks>
+             页索引文件框允许用户手式输入要访问的页的索引，当页数非常多时，显示页索引文本框非常方便用户跳转到指定的页，默认情况下，该文本框只有在总页数大于或等于 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowBoxThreshold"/> 的值时才显示，否则不显示，要想该文本框任何时候都显示，请将其值设为Always，若希望任何时候都不显示，则应设为Never。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.InputBoxClass">
+            <summary>
+            获取或设置应用于页索引输入文本框的CSS类名。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.InputBoxStyle">
+            <summary>
+            获取或设置页索引输入文本框的CSS样式文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.TextBeforeInputBox">
+            <summary>
+            获取或设置页索引页索引输入文本框前的文本字符串值。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.TextAfterInputBox">
+            <summary>
+            获取或设置页索引文本输入框后的文本内容字符串值。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.SubmitButtonText">
+            <summary>
+            获取或设置提交按钮上的文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.SubmitButtonClass">
+            <summary>
+            获取或设置应用于提交按钮的CSS类名。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.SubmitButtonStyle">
+            <summary>
+            获取或设置应用于提交按钮的CSS样式。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowBoxThreshold">
+            <summary>
+            获取或设置自动显示页索引输入文本框的最低起始页数。
+            </summary>
+            <remarks>
+            当 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowInputBox"/> 设为Auto（默认）并且要分页的数据的总页数达到该值时会自动显示页索引输入文本框，默认值为30。该选项当 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowInputBox"/> 设为Never或Always时没有任何作用。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowCustomInfoSection">
+            <summary>
+            获取或设置显示用户自定义信息区的方式。
+            </summary>
+            <remarks>
+            该属性值设为Left或Right时会在分页导航元素左边或右边划出一个专门的区域来显示有关用户自定义信息，设为Never时不显示。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CustomInfoTextAlign">
+            <summary>
+            获取或设置用户自定义信息区文本的对齐方式。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CustomInfoSectionWidth">
+            <summary>
+            获取或设置用户自定义信息区的宽度。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CustomInfoClass">
+            <summary>
+            获取或设置应用于用户自定义信息区的级联样式表类名。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CustomInfoStyle">
+            <summary>
+            获取或设置应用于用户自定义信息区的CSS样式文本。
+            </summary>
+            <value>字符串值，要应用于用户自定义信息区的CSS样式文本。</value>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CustomInfoText">
+            <summary>
+            获取或设置在显示在用户自定义信息区的用户自定义文本。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.AlwaysShow">
+            <summary>
+            获取或设置一个值，该值指定是否总是显示Pager分页按件，即使要分页的数据只有一页。
+            </summary>
+            <remarks>
+            默认情况下，当要分页的数据小于两页时，Pager不会在页面上显示任何内容，将此属性值设为true时，即使总页数只有一页，Pager也将显示分页导航元素。
+            </remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CssClass">
+            <summary>
+            获取或设置由 Pager 服务器控件在客户端呈现的级联样式表 (CSS) 类。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.EnableViewState">
+            <summary>
+            获取或设置一个值，该值指示 Pager 服务器控件是否向发出请求的客户端保持自己的视图状态，该属性经重写后不允许设为false。
+            </summary>
+            <remarks><see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 服务器控件将一些重要的分页信息保存在ViewState中，当使用Url分页方式时，虽然视图状态在分页过程中没有任何作用，但若当前页需要回发，则必须启用视图状态以便分页控件能在页面回发后获取回发前的分页状态；当通过页面回发（PostBack）的方式来分页时，要使Pager正常工作，必须启用视图状态。
+            <p><note>该属性并不能禁止用户用<![CDATA[<%@Page EnableViewState=false%> ]]>页指令来禁用整个页面的视图状态，当使用此指令并且设置Pager通过页面回发来分页时，Pager因为无法获取保存的信息而不能正常工作。</note></p></remarks>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.PageIndexOutOfRangeErrorString">
+            <summary>
+            获取或设置当用户输入的页索引超出范围（大于最大页索引或小于最小页索引）时在客户端显示的错误信息。
+            </summary>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.Pager.InvalidPageIndexErrorString">
+            <summary>
+            获取或设置当用户输入无效的页索引（负值或非数字）时在客户端显示的错误信息。
+            </summary>
+        </member>
+        <member name="E:Powerise.Hygeia.Web.UI.WebControls.Pager.PageChanged">
+             <summary>
+             当页导航元素之一被单击或用户手工输入页索引提交时发生。
+             </summary>
+             <example>下面的示例显示如何为PageChanged事件指定和编写事件处理程序，在该事件处理程序中重新绑定DataGrid上显示的数据：
+             <code><![CDATA[
+            <%@ Page Language="C#"%>
+            <%@ Import Namespace="System.Data"%>
+            <%@Import Namespace="System.Data.SqlClient"%>
+            <%@Import Namespace="System.Configuration"%>
+            <%@Register TagPrefix="Webdiyer" Namespace="Wuqi.Webdiyer" Assembly="Pager"%>
+            <HTML>
+            <HEAD>
+            <TITLE>Welcome to Webdiyer.com </TITLE>
+              <script runat="server">
+            		SqlConnection conn;
+            		SqlCommand cmd;
+            		void Page_Load(object src,EventArgs e)
+            		{
+            			conn=new SqlConnection(ConfigurationSettings.AppSettings["ConnStr"]);
+            			if(!Page.IsPostBack)
+            			{
+            				cmd=new SqlCommand("GetNews",conn);
+            				cmd.CommandType=CommandType.StoredProcedure;
+            				cmd.Parameters.Add("@pageindex",1);
+            				cmd.Parameters.Add("@pagesize",1);
+            				cmd.Parameters.Add("@docount",true);
+            				conn.Open();
+            				pager.RecordCount=(int)cmd.ExecuteScalar();
+            				conn.Close();
+            				BindData();
+            			}
+            		}
+            
+            		void BindData()
+            		{
+            			cmd=new SqlCommand("GetNews",conn);
+            			cmd.CommandType=CommandType.StoredProcedure;
+            			cmd.Parameters.Add("@pageindex",pager.CurrentPageIndex);
+            			cmd.Parameters.Add("@pagesize",pager.PageSize);
+            			cmd.Parameters.Add("@docount",false);
+            			conn.Open();
+            			dataGrid1.DataSource=cmd.ExecuteReader();
+            			dataGrid1.DataBind();
+            			conn.Close();
+            		}
+            		void ChangePage(object src,PageChangedEventArgs e)
+            		{
+            			pager.CurrentPageIndex=e.NewPageIndex;
+            			BindData();
+            		}
+              </script>
+                 <meta http-equiv="Content-Language" content="zh-cn">
+            		<meta http-equiv="content-type" content="text/html;charset=gb2312">
+            		<META NAME="Generator" CONTENT="EditPlus">
+            		<META NAME="Author" CONTENT="Webdiyer(yhaili@21cn.com)">
+            	</HEAD>
+            	<body>
+            		<form runat="server" ID="Form1">
+            			<asp:DataGrid id="dataGrid1" runat="server" />
+            			<Webdiyer:Pager id="pager" runat="server" PageSize="8" NumericButtonCount="8" ShowCustomInfoSection="before" ShowInputBox="always" CssClass="mypager" HorizontalAlign="center" OnPageChanged="ChangePage" />
+            		</form>
+            	</body>
+            </HTML>
+             ]]>
+             </code>
+             <p>该示例所用的Sql Server存储过程代码如下：</p>
+             <code>
+             <![CDATA[
+            CREATE procedure GetNews
+             	(@pagesize int,
+            		@pageindex int,
+            		@docount bit)
+            		as
+            		set nocount on
+            		if(@docount=1)
+            		select count(id) from news
+            		else
+            		begin
+            		declare @indextable table(id int identity(1,1),nid int)
+            		declare @PageLowerBound int
+            		declare @PageUpperBound int
+            		set @PageLowerBound=(@pageindex-1)*@pagesize
+            		set @PageUpperBound=@PageLowerBound+@pagesize
+            		set rowcount @PageUpperBound
+            		insert into @indextable(nid) select id from news order by addtime desc
+            		select O.id,O.source,O.title,O.addtime from news O,@indextable t where O.id=t.nid
+            		and t.id>@PageLowerBound and t.id<=@PageUpperBound order by t.id
+            		end
+            		set nocount off
+            GO
+             ]]>
+             </code>
+            </example>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PageChangedEventHandler">
+            <summary>
+            表示处理 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.Pager.PageChanged"/> 事件的方法。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PageChangedEventArgs">
+            <summary>
+            为 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.Pager.PageChanged"/> 事件提供数据。无法继承此类。
+            </summary>
+            <remarks>
+            当 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页导航元素之一被单击或用户输入页索引提交时引发 <see cref="E:Powerise.Hygeia.Web.UI.WebControls.Pager.PageChanged"/> 事件。
+            <p>有关 PageChangedEventArgs 实例的初始属性值列表，请参阅 PageChangedEventArgs 构造函数。</p>
+            </remarks>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PageChangedEventArgs.#ctor(System.Int32)">
+            <summary>
+            使用新页面索引初始化 PageChangedEventArgs 类的新实例。
+            </summary>
+            <param name="newPageIndex">用户从 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页选择元素选定的或在页索引文本框中手工输入的页的索引。</param>
+        </member>
+        <member name="P:Powerise.Hygeia.Web.UI.WebControls.PageChangedEventArgs.NewPageIndex">
+             <summary>
+             获取用户在 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页选择元素中选定的或在页索引文本框中手工输入的页的索引。
+             </summary>
+            <value>用户在 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页选择元素中选定的或在页索引文本框中输入的页的索引。
+            </value>
+            <remarks>
+            使用 NewPageIndex 属性确定用户在 <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 控件的页选择元素中选定的或在页索引文本框中输入的页的索引。
+            该值常用于设置要显示选定页的 Pager 控件的 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.CurrentPageIndex"/> 属性。
+            </remarks>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.ShowInputBox">
+            <summary>
+            指定页索引输入文本框的显示方式，以便用户可以手工输入页索引。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowInputBox.Never">
+            <summary>
+            从不显示页索引输入文本框。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowInputBox.Auto">
+            <summary>
+            自动，选择此项后可以用 <see cref="P:Powerise.Hygeia.Web.UI.WebControls.Pager.ShowBoxThreshold"/> 可控制当总页数达到多少时自动显示页索引输入文本框。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowInputBox.Always">
+            <summary>
+            总是显示页索引输入文本框。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.ShowCustomInfoSection">
+            <summary>
+            指定当前页索引和总页数信息的显示方式。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowCustomInfoSection.Never">
+            <summary>
+            不显示。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowCustomInfoSection.Left">
+            <summary>
+            显示在页导航元素之前。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.ShowCustomInfoSection.Right">
+            <summary>
+            显示在页导航元素之后。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PagingButtonType">
+            <summary>
+            指定页导航按钮的类型。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.PagingButtonType.Text">
+            <summary>
+            使用文字按钮。
+            </summary>
+        </member>
+        <member name="F:Powerise.Hygeia.Web.UI.WebControls.PagingButtonType.Image">
+            <summary>
+            使用图片按钮。
+            </summary>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.PagerDesigner">
+            <summary>
+            <see cref="T:Powerise.Hygeia.Web.UI.WebControls.Pager"/> 服务器控件设计器。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PagerDesigner.#ctor">
+            <summary>
+            初始化 PagerDesigner 的新实例。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PagerDesigner.GetDesignTimeHtml">
+            <summary>
+            获取用于在设计时表示关联控件的 HTML。
+            </summary>
+            <returns>用于在设计时表示控件的 HTML。</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.PagerDesigner.GetErrorDesignTimeHtml(System.Exception)">
+            <summary>
+            获取在呈现控件时遇到错误后在设计时为指定的异常显示的 HTML。
+            </summary>
+            <param name="e">要为其显示错误信息的异常。</param>
+            <returns>设计时为指定的异常显示的 HTML。</returns>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.StyleHelper">
+            <summary>
+            样式对象辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(Microsoft.Web.UI.WebControls.CssCollection,System.String)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(System.Web.UI.CssStyleCollection,System.String)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(Microsoft.Web.UI.WebControls.CssCollection,System.String,Powerise.Hygeia.Framework.StyleMapping)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+            <param name="mapping">样式内存缓存</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(System.Web.UI.CssStyleCollection,System.String,Powerise.Hygeia.Framework.StyleMapping)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+            <param name="mapping">样式内存缓存</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(Microsoft.Web.UI.WebControls.CssCollection,System.Collections.Hashtable)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylemap">样式集合</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setStyle(System.Web.UI.CssStyleCollection,System.Collections.Hashtable)">
+            <summary>
+            设置对象的样式
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylemap">样式集合</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setDefaultStyle(Microsoft.Web.UI.WebControls.CssCollection,System.String,System.String)">
+            <summary>
+            设置对象的缺省样式（框架使用）
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+            <param name="stylestring">样式字符串</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.StyleHelper.setDefaultStyle(System.Web.UI.CssStyleCollection,System.String,System.String)">
+            <summary>
+            设置对象的缺省样式（框架使用）
+            </summary>
+            <param name="styleobj">对象</param>
+            <param name="stylename">样式名称</param>
+            <param name="stylestring">样式字符串</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.TabStripHelper">
+            <summary>
+            TabStrip辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TabStripHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TabStripHelper.setStyle(Microsoft.Web.UI.WebControls.TabStrip)">
+            <summary>
+            设置对象的样式(Style DefaultStyle SelectedStyle HoverStyle)
+            具体样式请见style.css中前缀名称为TabStrip的设置
+            </summary>
+            <param name="ts">TabStrip对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TabStripHelper.setStyle(Microsoft.Web.UI.WebControls.TabStrip,System.String)">
+            <summary>
+            设置对象的样式(Style DefaultStyle SelectedStyle HoverStyle)
+            </summary>
+            <param name="ts">TabStrip对象</param>
+            <param name="stylename">样式前缀名称</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.TextBoxHelper">
+            <summary>
+            TextBox辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TextBoxHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TextBoxHelper.bindEnterKey(System.Web.UI.WebControls.TextBox,System.String)">
+            <summary>
+            绑定回车键
+            </summary>
+            <param name="tb">文本框对象</param>
+            <param name="name">按钮名称</param>
+        </member>
+        <member name="T:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper">
+            <summary>
+            TreeView辅助类。
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.#ctor">
+            <summary>
+            构造函数（不能实例化）
+            </summary>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.setStyle(Microsoft.Web.UI.WebControls.TreeView)">
+            <summary>
+            设置对象的样式(DefaultStyle SelectedStyle HoverStyle)
+            具体样式请见style.css中前缀名称为TreeView的设置
+            </summary>
+            <param name="tv">TreeView对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.setStyle(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            设置对象的样式(DefaultStyle SelectedStyle HoverStyle)
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="stylename">样式前缀名称</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.setNodeCheck(Microsoft.Web.UI.WebControls.TreeNode,System.Boolean)">
+            <summary>
+            设置节点的check状态
+            </summary>
+            <param name="tn">节点对象</param>
+            <param name="state">check状态</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getDataFromCheck(Microsoft.Web.UI.WebControls.TreeView)">
+            <summary>
+            获取所有check的节点数据
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <returns>包含节点数据的数组对象</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.selectNodeFromData(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            通过节点数据选择对应节点
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="data">查找数据</param>
+            <return>选择是否成功</return>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.findNodeFromText(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            通过节点数据选择对应节点
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="data">查找数据</param>
+            <return>查找是否成功</return>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getIndexFromData(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            通过节点数据查找对应索引
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="data">查找数据</param>
+            <returns>对应索引（没有匹配的返回0)</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getTexrFromData(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            通过节点数据查找对应文本
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="data">查找数据</param>
+            <returns>对应索引（没有匹配的返回节点数据)</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getIndexFromData(Microsoft.Web.UI.WebControls.TreeView,Microsoft.Web.UI.WebControls.TreeNode,System.String)">
+            <summary>
+            通过节点数据查找对应索引
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="tn">Microsoft.Web.UI.WebControls.TreeNode对象（为空将使用root节点）</param>
+            <param name="data">查找数据</param>
+            <returns>对应索引（没有匹配的返回0)</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getIndexFromText(Microsoft.Web.UI.WebControls.TreeView,Microsoft.Web.UI.WebControls.TreeNode,System.String)">
+            <summary>
+            通过节点文本查找对应索引
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="tn">Microsoft.Web.UI.WebControls.TreeNode对象（为空将使用root节点）</param>
+            <param name="data">查找数据</param>
+            <returns>对应索引（没有匹配的返回"-1")</returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.expandNode(Microsoft.Web.UI.WebControls.TreeView,Microsoft.Web.UI.WebControls.TreeNode)">
+            <summary>
+            展开节点
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="tn">节点对象</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.expandNodeFromIndex(Microsoft.Web.UI.WebControls.TreeView,System.String)">
+            <summary>
+            根据索引展开节点
+            </summary>
+            <param name="tv">TreeView对象</param>
+            <param name="index">节点索引值</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.findNodeData(Microsoft.Web.UI.WebControls.TreeNode,System.String)">
+            <summary>
+            递归查找节点数据
+            </summary>
+            <param name="tnParent">查找的节点</param>
+            <param name="strValue">查找的数据</param>
+            <returns></returns>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.findNodeText(Microsoft.Web.UI.WebControls.TreeNode,System.String,System.Collections.ArrayList,Microsoft.Web.UI.WebControls.TreeNode,System.Int32@)">
+            <summary>
+            递归查找节点文本
+            </summary>
+            <param name="tnParent">查找的节点</param>
+            <param name="strValue">查找的文本</param>
+            <param name="alIndex">所有符合条件的索引集合</param>
+            <param name="tnBase">当前节点</param>
+            <param name="iBase">当前节点位置</param>
+        </member>
+        <member name="M:Powerise.Hygeia.Web.UI.WebControls.TreeViewHelper.getCheckNodeData(Microsoft.Web.UI.WebControls.TreeNode,System.Collections.ArrayList)">
+            <summary>
+            递归获取所有check的节点数据
+            </summary>
+            <param name="tnParent"></param>
+            <param name="alData"></param>
+        </member>
+    </members>
+</doc>

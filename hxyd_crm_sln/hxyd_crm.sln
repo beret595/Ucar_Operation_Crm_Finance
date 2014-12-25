@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hxyd_crm", "http://localhost/hxyd_crm/hxyd_crm.csproj", "{47DF4C43-3F36-4C5D-BDD5-448DE4B76A1E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseyLib", "CaseyLib\CaseyLib.csproj", "{ED9C8A79-D0AA-4D0B-8451-B4FFD880719A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hxyd_biz", "hxyd_biz\hxyd_biz.csproj", "{82AC5B89-08FC-484B-A32F-835E3D442F73}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{47DF4C43-3F36-4C5D-BDD5-448DE4B76A1E}.Debug.ActiveCfg = Debug|.NET
+		{47DF4C43-3F36-4C5D-BDD5-448DE4B76A1E}.Debug.Build.0 = Debug|.NET
+		{47DF4C43-3F36-4C5D-BDD5-448DE4B76A1E}.Release.ActiveCfg = Release|.NET
+		{47DF4C43-3F36-4C5D-BDD5-448DE4B76A1E}.Release.Build.0 = Release|.NET
+		{ED9C8A79-D0AA-4D0B-8451-B4FFD880719A}.Debug.ActiveCfg = Debug|.NET
+		{ED9C8A79-D0AA-4D0B-8451-B4FFD880719A}.Debug.Build.0 = Debug|.NET
+		{ED9C8A79-D0AA-4D0B-8451-B4FFD880719A}.Release.ActiveCfg = Release|.NET
+		{ED9C8A79-D0AA-4D0B-8451-B4FFD880719A}.Release.Build.0 = Release|.NET
+		{82AC5B89-08FC-484B-A32F-835E3D442F73}.Debug.ActiveCfg = Debug|.NET
+		{82AC5B89-08FC-484B-A32F-835E3D442F73}.Debug.Build.0 = Debug|.NET
+		{82AC5B89-08FC-484B-A32F-835E3D442F73}.Release.ActiveCfg = Release|.NET
+		{82AC5B89-08FC-484B-A32F-835E3D442F73}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
