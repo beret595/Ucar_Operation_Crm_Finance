@@ -57,9 +57,16 @@ namespace hxyd_crm
 
 		private void Button1_Click(object sender, System.EventArgs e)
 		{
-			UserAssignHelper objuser = new UserAssignHelper();
-			int num_car = objuser.Update_Car_Other()-1;
-			Label2.Text = "本次更新共更新"+num_car+"条车辆数据";
+			try
+			{
+				UserAssignHelper objuser = new UserAssignHelper();
+				int num_car = objuser.Update_Car_Other()-1;
+				Label2.Text = "本次更新共更新"+num_car+"条车辆数据";
+			}
+			catch(Exception ex)
+			{
+				JavaScriptHelper.AlertMessage(this.Page,ex.Message);
+			}
 		}
 
 		private void Button2_Click(object sender, System.EventArgs e)

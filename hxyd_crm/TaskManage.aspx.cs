@@ -108,20 +108,12 @@ namespace hxyd_crm
 
 		private void dgdCompany_ItemCommand(object source, System.Web.UI.WebControls.DataGridCommandEventArgs e)
 		{
-//			if(e.CommandName=="Select")
-//			{
-//				if( e.Item.Cells[11].Text.ToString().Trim()=="已接受"|| e.Item.Cells[11].Text.ToString().Trim()=="已完成")
-//				{
-//					JavaScriptHelper.AlertMessage(this.Page,"已接受或已完成的任务无法再次分配");
-//					return;
-//				}
-//				lb_text.Visible=true;
-//				DropDownList2.Visible=true;
-//				Button1.Visible = true;
-//				ViewState["person_id"] = e.Item.Cells[8].Text.ToString().Trim();
-//				ViewState["car_id"] = e.Item.Cells[9].Text.ToString().Trim();
-//				ViewState["kehu_no"] = e.Item.Cells[10].Text.ToString().Trim().Replace("&nbsp;","");
-//			}
+			if(e.CommandName=="View")
+			{
+				string carid=e.Item.Cells[13].Text;
+				string strScript="openDialog('ViwCustomer.aspx?carid="+carid+"',600,900);";		
+				JavaScriptHelper.RunScript(this,ScriptPos.Begin,strScript);
+			}
 		}
 
 		private void Button1_Click(object sender, System.EventArgs e)
@@ -134,9 +126,9 @@ namespace hxyd_crm
 				#region 
 				if(ctrChkBox.Checked)
 				{
-					string person_id  = dg_item.Cells[9].Text.ToString().Trim();
-					string car_id = dg_item.Cells[10].Text.ToString().Trim();
-					string kehu_no = dg_item.Cells[11].Text.ToString().Trim().Replace("&nbsp;","");
+					string person_id  = dg_item.Cells[12].Text.ToString().Trim();
+					string car_id = dg_item.Cells[13].Text.ToString().Trim();
+					string kehu_no = dg_item.Cells[14].Text.ToString().Trim().Replace("&nbsp;","");
 					string assign_type = "";
 					if(DropDownList1.SelectedValue == "未分配保养提醒数据")
 					{
@@ -161,7 +153,7 @@ namespace hxyd_crm
 						if(objassign.SaveUserAssigner(ht))
 						{
 							JavaScriptHelper.AlertMessage(this.Page,"保存成功");
-							SetVisble();						
+							//SetVisble();						
 						}
 					}
 					else
@@ -174,7 +166,7 @@ namespace hxyd_crm
 						if(objassign.UpdateUserAssigner(ht))
 						{
 							JavaScriptHelper.AlertMessage(this.Page,"更新任务成功");
-							SetVisble();
+							//SetVisble();
 							
 						}
 					}
