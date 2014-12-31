@@ -7,10 +7,9 @@
 		<meta name="CODE_LANGUAGE" content="C#">
 		<meta name="vs_defaultClientScript" content="JavaScript">
 		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
-		<SCRIPT language="JavaScript" src="./js/datepicker/WdatePicker.js"></SCRIPT>
-		<script type="text/javascript" src="./js/business.js"></script>
 		<LINK rel="stylesheet" type="text/css" href="./css/special.css">
 		<LINK rel="stylesheet" type="text/css" href="./css/css.css">
+		<script language="javascript" src="./js/dgSelect.js"></script>
 	</HEAD>
 	<body MS_POSITIONING="GridLayout">
 		<form id="Form1" method="post" runat="server">
@@ -51,21 +50,18 @@
 									</ItemTemplate>
 								</asp:TemplateColumn>
 								<asp:BoundColumn DataField="personName" HeaderText="客户"></asp:BoundColumn>
-								<asp:BoundColumn DataField="brandNameCN" HeaderText="品牌"></asp:BoundColumn>
-								<asp:BoundColumn DataField="car_model" HeaderText="车型"></asp:BoundColumn>
+								<asp:BoundColumn DataField="brandNameCN" HeaderText="车型"></asp:BoundColumn>
 								<asp:BoundColumn DataField="licensePlate" HeaderText="车牌"></asp:BoundColumn>
+								<asp:BoundColumn DataField="salesdate" HeaderText="生成日期"></asp:BoundColumn>
 								<asp:BoundColumn DataField="average_mileage" HeaderText="平均里程"></asp:BoundColumn>
-								<asp:BoundColumn DataField="curr_mileage" HeaderText="当前里程"></asp:BoundColumn>
 								<asp:BoundColumn DataField="mileage" HeaderText="维护里程"></asp:BoundColumn>
-								<asp:BoundColumn DataField="keep_date" HeaderText="生成日期"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_data" HeaderText="分配日期"></asp:BoundColumn>
 								<asp:BoundColumn DataField="username" HeaderText="接受人"></asp:BoundColumn>
 								<asp:BoundColumn DataField="assign_type" HeaderText="案件状态"></asp:BoundColumn>
 								<asp:BoundColumn DataField="personId" Visible="False"></asp:BoundColumn>
 								<asp:BoundColumn DataField="car_id" Visible="False"></asp:BoundColumn>
 								<asp:BoundColumn DataField="kuhu_no" Visible="False"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>								
-								<asp:ButtonColumn Text=" 查 看 " HeaderText="操作" CommandName="View"></asp:ButtonColumn>
+								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>
+								<asp:ButtonColumn Text=" 分 配 " HeaderText="操作" CommandName="Select"></asp:ButtonColumn>
 							</Columns>
 						</asp:DataGrid></td>
 				</tr>

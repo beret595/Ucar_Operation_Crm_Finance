@@ -69,25 +69,30 @@ float:right;TEXT-ALIGN: center; PADDING-LEFT: 8px; PADDING-RIGHT: 8px; DISPLAY: 
         {
             background: #80afdb;
             color: #fff;
+            text-decoration: underline;
         }
          #menu LI A:active
         {
             background: #80afdb;
             color: #fff;
+            text-decoration: underline;
         }
 #mobanwang_com li a:hover
 {
 	background: #80afdb;
             color: #fff;
+            text-decoration: underline;
 }
 #mobanwang_com li a:active
 {
 background: #80afdb;
             color: #fff;
+            text-decoration: underline;
 }
 #mobanwang_com li a:visited
 {
             color: #fff;
+            text-decoration: underline;
 }
  .mainlevel ul {display:none; position:relative; z-index:10000; left:-5px;}
 
@@ -444,6 +449,7 @@ ul {
 			height:35px;
             background: #80afdb;
             COLOR: white;
+            text-decoration: underline;
     }
 .second-menu {
 	top:32px;
@@ -523,6 +529,7 @@ ul {
   </ul>
   <li  id="li_AddPage"><A onclick=goAddPage(); href="javascript:void(0);" >新建客户</A> </LI>
   <li  id="li_Manage"><A onclick=doManage(); href="javascript:void(0);" >用户管理</A> 
+  <li  id="li_Profit"><A onclick=doProfit(); href="javascript:void(0);" >利润管理</A> 
   <li  id="li_KPI" class="mainlevel"><A onclick=doAgentKPI(); href="javascript:void(0);"  >绩效管理</A>
   
 

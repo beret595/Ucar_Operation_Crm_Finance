@@ -142,7 +142,7 @@ namespace hxyd_biz
 			catch(Exception ex)
 			{
 				trans_hdb.Rollback();
-				throw new Exception(ex.Message);
+				throw new Exception("更新车辆数据出错");
 			}
 			finally
 			{
@@ -203,12 +203,7 @@ namespace hxyd_biz
 						lSQL = new StringBuilder();
 						lSQL.Append("  select * from kehu where kehu_no = '"+dt_user_car.Rows[j]["kehu_no"].ToString()+"' ");  //客户姓名
 						String uers_name = "";
-						DataTable dt_users = DBFunc.executeDataTable(Con1,lSQL.ToString());
-						if(dt_users.Rows.Count <= 0)
-						{
-							continue;
-						}
-						uers_name =dt_users.Rows[0]["kehu_mc"].ToString(); 
+						uers_name =DBFunc.executeDataTable(Con1,lSQL.ToString()).Rows[0]["kehu_mc"].ToString(); 
 						String user_id = "";
 						lSQL = new StringBuilder();
 						lSQL.Append("  select * from hdb_caseInfo where personName = '"+uers_name+"' ");
@@ -307,10 +302,6 @@ namespace hxyd_biz
 
 						DBFunc.executeNonQuery(trans,lSQL.ToString());	
 						num++;
-						if(num==435)
-						{
-							int jjj = num;
-						}
 					}				
 				}
 				trans.Commit();
@@ -318,7 +309,7 @@ namespace hxyd_biz
 			catch(Exception ex)
 			{
 				trans.Rollback();
-				throw new Exception(ex.Message+num.ToString());
+				throw new Exception("更新车辆数据出错");
 			}
 			finally
 			{
@@ -486,15 +477,13 @@ namespace hxyd_biz
 			StringBuilder lSQL = new StringBuilder();
 			lSQL.Append(" select top "+pay_num+" ci.personId,ci.licensePlate, ");
 			lSQL.Append("     ci.id as car_id, ");
-			lSQL.Append("     ci.car_model, ");
 			lSQL.Append("     kehu_no as kuhu_no, ");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
 			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
-			lSQL.Append("     convert(varchar,keep_date,111) as keep_date,ci.average_mileage,     ");
-			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
+			lSQL.Append("     keep_date,ci.average_mileage,     ");
+			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
-			lSQL.Append("     ua.assign_data,");
 			lSQL.Append("     ua.assign_type as assign_type, ");
 			lSQL.Append("     ua.assign_role,");
 			lSQL.Append("     ue.fullName as username ");
@@ -519,16 +508,14 @@ namespace hxyd_biz
 			StringBuilder lSQL = new StringBuilder();
 			lSQL.Append(" select top "+pay_num+" ci.personId,ci.licensePlate, ");
 			lSQL.Append("     ci.id as car_id, ");
-			lSQL.Append("     ci.car_model, ");
 			lSQL.Append("     kehu_no as kuhu_no, ");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
 			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
 			lSQL.Append("     keep_date,ci.average_mileage,     ");
-			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
+			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
 			lSQL.Append("     ua.assign_type as assign_type, ");
-			lSQL.Append("     ua.assign_data, ");
 			lSQL.Append("     ua.assign_role,");
 			lSQL.Append("     ue.fullName as username ");
 			lSQL.Append(" from dbo.Car_info ci,brandinfo bi,hdb_caseInfo hc,user_assign ua,dbo.hdb_user ue ");
@@ -553,15 +540,12 @@ namespace hxyd_biz
 			lSQL.Append(" select top "+pay_num+" ci.personId,ci.licensePlate, ");
 			lSQL.Append("     ci.id as car_id, ");
 			lSQL.Append("     kehu_no as kuhu_no, ");
-			lSQL.Append("     ci.car_model, ");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
 			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
 			lSQL.Append("     keep_date,ci.average_mileage,     ");
-			lSQL.Append("     (datediff(day,ci.salesDate,GETDATE()))*ci.average_mileage as curr_mileage, ");
 			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
-			lSQL.Append("     ua.assign_data, ");
 			lSQL.Append("     ua.assign_type as assign_type, ");
 			lSQL.Append("     ua.assign_role,");
 			lSQL.Append("     ue.fullName as username ");
@@ -586,16 +570,14 @@ namespace hxyd_biz
 		{
 			StringBuilder lSQL = new StringBuilder();
 			lSQL.Append(" select top "+pay_num+" ci.personId,ci.licensePlate, ");
-			lSQL.Append("     ci.car_model, ");
 			lSQL.Append("     ci.id as car_id, ");
 			lSQL.Append("     null as kuhu_no,");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
 			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
-			lSQL.Append("     convert(varchar,keep_date,111) as keep_date,ci.average_mileage,     ");
-			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
+			lSQL.Append("     keep_date,ci.average_mileage,     ");
+			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
-			lSQL.Append("     '' as assign_data, ");
 			lSQL.Append("     '未分配' as assign_type, ");
 			lSQL.Append("     '未分配' as assign_role,");
 			lSQL.Append("     '' as  username ");
@@ -625,13 +607,10 @@ namespace hxyd_biz
 			lSQL.Append("     null as kuhu_no,");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
-			lSQL.Append("     ci.car_model, ");
 			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
-			lSQL.Append("     convert(varchar,keep_date,111) as keep_date,ci.average_mileage,     ");
-			lSQL.Append("     (datediff(day,ci.salesDate,GETDATE()))*ci.average_mileage as curr_mileage,");
+			lSQL.Append("     keep_date,ci.average_mileage,     ");
 			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
-			lSQL.Append("     '' as assign_data,");
 			lSQL.Append("     '未分配' as assign_type, ");
 			lSQL.Append("     '未分配' as assign_role,");
 			lSQL.Append("     '' as  username ");
