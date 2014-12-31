@@ -54,6 +54,7 @@ namespace hxyd_biz
 					}
 				}
 				lSQL.Append(" from kehu ");
+				lSQL.Append("   where PATINDEX('%[A-Za-z]%', kehu_no)!=0 and PATINDEX('%[0-9]%', kehu_no) !=0 and LEN(kehu_no) =7");
 				DataTable dt_user_Boss = new DataTable();
 				dt_user_Boss = DBFunc.executeDataTable(Con_boss,lSQL.ToString());
 				//∆•≈‰–’√˚
@@ -212,7 +213,15 @@ namespace hxyd_biz
 						String user_id = "";
 						lSQL = new StringBuilder();
 						lSQL.Append("  select * from hdb_caseInfo where personName = '"+uers_name+"' ");
-						user_id = DBFunc.executeDataTable(trans,lSQL.ToString()).Rows[0]["id"].ToString(); ;
+						DataTable dt_users_id = DBFunc.executeDataTable(trans,lSQL.ToString());
+						if(dt_users_id.Rows.Count <= 0)
+						{
+							continue;
+						}
+						else
+						{
+							user_id = DBFunc.executeDataTable(trans,lSQL.ToString()).Rows[0]["id"].ToString(); 
+						}
 					
 						lSQL = new StringBuilder();
 						lSQL.Append(" insert into Car_info (");
@@ -307,7 +316,7 @@ namespace hxyd_biz
 
 						DBFunc.executeNonQuery(trans,lSQL.ToString());	
 						num++;
-						if(num==435)
+						if(num==130)
 						{
 							int jjj = num;
 						}
