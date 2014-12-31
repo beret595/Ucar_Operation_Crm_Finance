@@ -506,6 +506,22 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "ViwCustomer.aspx"
+                    SubType = "Form"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "ViwCustomer.aspx.cs"
+                    DependentUpon = "ViwCustomer.aspx"
+                    SubType = "ASPXCodeBehind"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ViwCustomer.aspx.resx"
+                    DependentUpon = "ViwCustomer.aspx.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
                     RelPath = "Web.config"
                     BuildAction = "Content"
                 />
