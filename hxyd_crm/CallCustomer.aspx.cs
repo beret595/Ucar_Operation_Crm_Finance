@@ -548,7 +548,7 @@ namespace  casey.hxyd_crm.Web.UI
 //					JavaScriptHelper.AlertMessage(this,"本次联系情况与保费不能同时为空，如修改客户信息，请通过客户管理页面进行修改!");
 //					return;
 //				}
-				if(htbCaseInfo["contactState"].ToString()=="续保成功" && ( htbCaseInfo["insuranceFees"].ToString()==string.Empty || htbCaseInfo["insuranceFees"].ToString()=="0"))
+				if(htbCaseInfo["contactState"].ToString()=="续保成功" && ( htbCaseInfo["insuranceFees"].ToString()==string.Empty || htbCaseInfo["insuranceFees"].ToString()=="0"||htbCaseInfo["forceInsur"].ToString() !=string.Empty))
 				{
 					JavaScriptHelper.AlertMessage(this,"续保成功，必须填写保费");
 					return;

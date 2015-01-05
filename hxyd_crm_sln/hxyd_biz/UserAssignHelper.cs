@@ -154,7 +154,7 @@ namespace hxyd_biz
 			}
 
 			return num;
-	}
+		}
 
 
 		//获取业务库的车辆信息信息
@@ -248,25 +248,55 @@ namespace hxyd_biz
 							{
 								if(k == dt_config.Rows.Count-1)
 								{
-									if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+									if(dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString().IndexOf("che_rjlc") >=0)
 									{
-										lSQL.Append(" null ");
+										if(dt_user_car.Rows[j]["che_rjlc"].ToString() =="")
+										{
+											lSQL.Append(" null ");
+										}
+										else
+										{
+											lSQL.Append("'"+dt_user_car.Rows[j]["che_rjlc"].ToString()+"'");
+										}
 									}
 									else
 									{
-										lSQL.Append("'"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"'");
+										if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+										{
+											lSQL.Append(" null ");
+										}
+										else
+										{
+											lSQL.Append("'"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"'");
+										}
 									}
+									
 								}
 								else
 								{
-									if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+									if(dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString().IndexOf("che_rjlc") >=0 )
 									{
-										lSQL.Append(" null,");
+										if(dt_user_car.Rows[j]["che_rjlc"].ToString() =="")
+										{
+											lSQL.Append(" null,");
+										}
+										else
+										{
+											lSQL.Append("'"+dt_user_car.Rows[j]["che_rjlc"].ToString()+"',");
+										}
 									}
 									else
 									{
-										lSQL.Append("'"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"',");
+										if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+										{
+											lSQL.Append(" null,");
+										}
+										else
+										{
+											lSQL.Append("'"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"',");
+										}
 									}
+									
 								}
 							}
 						}
@@ -289,24 +319,53 @@ namespace hxyd_biz
 							{
 								if(k == dt_config.Rows.Count-1)
 								{
-									if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+									if(dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString().IndexOf("che_rjlc") >=0 )
 									{
-										lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= null ");
+										if(dt_user_car.Rows[j]["che_rjlc"].ToString() =="")
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+" = null ");
+										}
+										else
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+" = '"+dt_user_car.Rows[j]["che_rjlc"].ToString()+"'");
+										}
 									}
 									else
 									{
-										lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= '"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"'" );
+										if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= null ");
+										}
+										else
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= '"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"'" );
+										}
 									}
+									
 								}
 								else
 								{
-									if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+									if(dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString().IndexOf("che_rjlc") >=0 )
 									{
-										lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= null, ");
+										if(dt_user_car.Rows[j]["che_rjlc"].ToString() =="" )
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+" = null, ");
+										}
+										else
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+" = '"+dt_user_car.Rows[j]["che_rjlc"].ToString()+"',");
+										}
 									}
 									else
 									{
-										lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= '"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"',");
+										if(dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString() =="")
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= null, ");
+										}
+										else
+										{
+											lSQL.Append(dt_config.Rows[k]["Column_correspondence_carinfo"].ToString()+"= '"+dt_user_car.Rows[j][dt_config.Rows[k]["Column_correspondence_cheliang_bossed"].ToString()].ToString()+"',");
+										}		
 									}
 								}		
 							}
