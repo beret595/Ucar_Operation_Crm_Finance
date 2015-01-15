@@ -64,7 +64,12 @@
 								<asp:BoundColumn DataField="personId" Visible="False"></asp:BoundColumn>
 								<asp:BoundColumn DataField="car_id" Visible="False"></asp:BoundColumn>
 								<asp:BoundColumn DataField="kuhu_no" Visible="False"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>								
+								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>	
+								<asp:BoundColumn DataField="expire_date" HeaderText="保险到期"  Visible="False"></asp:BoundColumn>
+								<asp:BoundColumn DataField="insuranceCompany" HeaderText="保险公司"  Visible="False"></asp:BoundColumn>		
+								<asp:BoundColumn DataField="userName" HeaderText="邀约员"  Visible="False"></asp:BoundColumn>
+								<asp:BoundColumn DataField="keep_date" HeaderText="生成日期"  Visible="False"></asp:BoundColumn>
+								<asp:BoundColumn DataField="assign_data" HeaderText="分配日期"  Visible="False"></asp:BoundColumn>						
 								<asp:ButtonColumn Text=" 查 看 " HeaderText="操作" CommandName="View"></asp:ButtonColumn>
 							</Columns>
 						</asp:DataGrid></td>
