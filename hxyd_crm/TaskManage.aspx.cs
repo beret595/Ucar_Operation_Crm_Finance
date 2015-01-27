@@ -78,9 +78,32 @@ namespace hxyd_crm
 		#region 查询保养信息
 		public void BinderBaoYang()
 		{	
+			//判断是保养提醒还是保险提醒
+			if(DropDownList1.SelectedValue.ToString() == "未分配其他数据")
+			{
+				dgdCompany.Columns[11].Visible = true;
+				dgdCompany.Columns[12].Visible = true;
+				dgdCompany.Columns[13].Visible = true;
+				dgdCompany.Columns[14].Visible = true;
+				dgdCompany.Columns[5].Visible = false;
+				dgdCompany.Columns[6].Visible = false;
+				dgdCompany.Columns[7].Visible = false;
+				dgdCompany.Columns[16].Visible = false;
+		}
+			else
+			{
+				dgdCompany.Columns[5].Visible = true;
+				dgdCompany.Columns[6].Visible = true;
+				dgdCompany.Columns[7].Visible = true;
+				dgdCompany.Columns[16].Visible = true;
+				dgdCompany.Columns[11].Visible = false;
+				dgdCompany.Columns[12].Visible = false;
+				dgdCompany.Columns[13].Visible = false;
+				dgdCompany.Columns[14].Visible = false;
+			}
 			UserAssignHelper obj_userAssign = new UserAssignHelper();		
 			string person_name = "";
-			if(TextBox2.Text!="")
+				if(TextBox2.Text!="")
 			{
 				person_name = TextBox2.Text;
 			}
@@ -110,7 +133,7 @@ namespace hxyd_crm
 		{
 			if(e.CommandName=="View")
 			{
-				string carid=e.Item.Cells[13].Text;
+				string carid=e.Item.Cells[9].Text;
 				string strScript="openDialog('ViwCustomer.aspx?carid="+carid+"',600,900);";		
 				JavaScriptHelper.RunScript(this,ScriptPos.Begin,strScript);
 			}

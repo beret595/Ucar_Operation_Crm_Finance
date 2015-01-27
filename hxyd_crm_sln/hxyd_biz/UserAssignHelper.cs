@@ -60,9 +60,9 @@ namespace hxyd_biz
 				//匹配姓名
 				for(int j = 0; j<dt_user_Boss.Rows.Count; j++)
 				{
-					String name = dt_user_Boss.Rows[j]["kehu_mc"].ToString();
+					String name = dt_user_Boss.Rows[j]["kehu_sj"].ToString();
 					lSQL = new StringBuilder();
-					lSQL.Append("   select * from hdb_caseInfo where personName = '"+name+"'");
+					lSQL.Append("   select * from hdb_caseInfo where phone = '"+name+"'");
 					DataTable dt_uers_hdb = new DataTable();
 					dt_uers_hdb = DBFunc.executeDataTable(trans_hdb,lSQL.ToString());
 					if(dt_uers_hdb.Rows.Count == 1)
@@ -88,7 +88,7 @@ namespace hxyd_biz
 							}
 						}
 
-						lSQL.Append("   where personName ='"+name+"' ");					
+						lSQL.Append("   where phone ='"+name+"' ");					
 						DBFunc.executeNonQuery(trans_hdb,lSQL.ToString());
 						num++;
 					
@@ -160,18 +160,25 @@ namespace hxyd_biz
 		//获取业务库的车辆信息信息
 		public int Update_Car_Other()
 		{
-			int num = 1;
+			int num = 0;
 			//获得需要变更的项目 
 			StringBuilder lSQL = new StringBuilder();
-			lSQL.Append(" select Column_correspondence_carinfo,Column_correspondence_cheliang_bossed from dbo.Correspondence_name_car  ");
+			lSQL.Append(" select Column_correspondence_carinfo,Column_correspondence_cheliang_bossed from dbo.Correspondence_name_car  ");			
 			IDbConnection Con=DBFunc.getConnection();
 			IDbConnection Con1=DBFunc.getConnection2();
+			StringBuilder lSQL2 = new StringBuilder();
+			lSQL2.Append(" select Column_correspondence_carinfo, ");
+			lSQL2.Append("  SUBSTRING(Column_correspondence_cheliang_bossed,Charindex('as',Column_correspondence_cheliang_bossed,0)+3,LEN(Column_correspondence_cheliang_bossed)) as Column_correspondence_cheliang_bossed ");
+			lSQL2.Append("  from dbo.Correspondence_name_car  ");
+
 
 			IDbTransaction trans=Con.BeginTransaction();
 			try
 			{
+				DataTable dt_config_bak = new DataTable();
 				DataTable dt_config = new DataTable();
-				dt_config = DBFunc.executeDataTable(trans,lSQL.ToString());
+				dt_config_bak = DBFunc.executeDataTable(trans,lSQL.ToString());
+				dt_config = DBFunc.executeDataTable(trans,lSQL2.ToString());
 				//获取Car库的数据
 				lSQL = new StringBuilder();
 				lSQL.Append(" select ");
@@ -179,16 +186,18 @@ namespace hxyd_biz
 				{
 					if(i == dt_config.Rows.Count-1)
 					{
-						lSQL.Append(dt_config.Rows[i]["Column_correspondence_cheliang_bossed"].ToString());
+						lSQL.Append(dt_config_bak.Rows[i]["Column_correspondence_cheliang_bossed"].ToString());
 					}
 					else
 					{
-						lSQL.Append(dt_config.Rows[i]["Column_correspondence_cheliang_bossed"].ToString()+",");
+						lSQL.Append(dt_config_bak.Rows[i]["Column_correspondence_cheliang_bossed"].ToString()+",");
 					}
 				}
-				lSQL.Append("  from work_cheliang_sm ");
+				lSQL.Append("  from work_cheliang_sm wcs,work_pz_sj wpj  ");
+				lSQL.Append("   where wcs.che_no=wpj.che_no");
 				DataTable dt_user_car = new DataTable();
 				dt_user_car = DBFunc.executeDataTable(Con1,lSQL.ToString());
+				//num = lSQL.ToString();
 				for(int j= 0; j< dt_user_car.Rows.Count; j++)
 				{
 					string licensePlate = dt_user_car.Rows[j]["che_no"].ToString();			// 车牌号
@@ -303,7 +312,7 @@ namespace hxyd_biz
 
 						lSQL.Append(")");				
 						DBFunc.executeNonQuery(trans,lSQL.ToString());	
-						num++;
+						//num=lSQL.ToString();
 					}
 					else
 					{
@@ -374,14 +383,10 @@ namespace hxyd_biz
 						lSQL.Append("   where licensePlate = '"+licensePlate+"' ");
 
 						DBFunc.executeNonQuery(trans,lSQL.ToString());	
-						num++;
-						if(num==130)
-						{
-							int jjj = num;
-						}
+						num=dt_user_car.Rows.Count;
 					}				
 				}
-				trans.Commit();
+				trans.Commit();				
 			}
 			catch(Exception ex)
 			{
@@ -563,6 +568,9 @@ namespace hxyd_biz
 			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
 			lSQL.Append("     ci.salesdate, ");
 			lSQL.Append("     ua.assign_data,");
+			lSQL.Append("     null as expire_date, ");    //保险到期日
+			lSQL.Append("     null as insuranceCompany,");//保险公司
+			lSQL.Append("     null as userName, ");    //邀约人
 			lSQL.Append("     ua.assign_type as assign_type, ");
 			lSQL.Append("     ua.assign_role,");
 			lSQL.Append("     ue.fullName as username ");
@@ -595,6 +603,9 @@ namespace hxyd_biz
 			lSQL.Append("     keep_date,ci.average_mileage,     ");
 			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
 			lSQL.Append("     ci.salesdate, ");
+			lSQL.Append("     null as expire_date, ");    //保险到期日
+			lSQL.Append("     null as insuranceCompany,");//保险公司
+			lSQL.Append("     null as userName, ");    //邀约人
 			lSQL.Append("     ua.assign_type as assign_type, ");
 			lSQL.Append("     ua.assign_data, ");
 			lSQL.Append("     ua.assign_role,");
@@ -630,6 +641,9 @@ namespace hxyd_biz
 			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
 			lSQL.Append("     ua.assign_data, ");
+			lSQL.Append("     null as expire_date, ");    //保险到期日
+			lSQL.Append("     null as insuranceCompany,");//保险公司
+			lSQL.Append("     null as userName, ");    //邀约人
 			lSQL.Append("     ua.assign_type as assign_type, ");
 			lSQL.Append("     ua.assign_role,");
 			lSQL.Append("     ue.fullName as username ");
@@ -659,24 +673,32 @@ namespace hxyd_biz
 			lSQL.Append("     null as kuhu_no,");
 			lSQL.Append("     hc.id, ");
 			lSQL.Append("     hc.personName, ");
-			lSQL.Append("     brandNameCN,brandNameEN,mileage, ");
+			lSQL.Append("     ci.manufacturers as brandNameCN,null as brandNameEN,null as mileage, ");
 			lSQL.Append("     convert(varchar,keep_date,111) as keep_date,ci.average_mileage,     ");
 			lSQL.Append("     datediff(day,ci.salesDate,GETDATE())*ci.average_mileage as curr_mileage, ");
 			lSQL.Append("     ci.salesdate, ");
+			lSQL.Append("     ci.expire_date, ");    //保险到期日
+			lSQL.Append("     in_list.insuranceCompany,");//保险公司
+			lSQL.Append("     hu.userName, ");    //邀约人
 			lSQL.Append("     '' as assign_data, ");
 			lSQL.Append("     '未分配' as assign_type, ");
 			lSQL.Append("     '未分配' as assign_role,");
 			lSQL.Append("     '' as  username ");
-			lSQL.Append(" from dbo.Car_info ci,brandinfo bi,hdb_caseInfo hc "); 
-			lSQL.Append(" where ci.manufacturers = brandNameCN ");
-			lSQL.Append("   and ci.personId = hc.id ");
+			lSQL.Append(" from dbo.Car_info ci,hdb_caseInfo hc,(select a.* from interview_list a,(select MAX(interviewListId) as interviewListId,carId from interview_list group by carId) b where a.interviewListId = b.interviewListId) in_list,hdb_user hu "); 
+			lSQL.Append(" where ");
+			lSQL.Append("   ci.personId = hc.id ");
+			lSQL.Append("   and ci.id = in_list.carId ");
+			lSQL.Append("   and in_list.agentId = hu.userId");
 			lSQL.Append("   and ci.keep_date is not null ");
 			if(person_name !="")
 			{
 				lSQL.Append("   and hc.personName like '%"+person_name+"%' ");
 			}
 			
-			lSQL.Append("   and (datediff(day,ci.keep_date,GETDATE()))*ci.average_mileage<=bi.mileage ");
+//            lSQL.Append("   and datediff(MONTH,ISNULL(ci.expire_date,ci.salesdate),GETDATE()) > -3 ");
+			lSQL.Append("  and (DATEDIFF(day,isnull(ci.expire_date,ci.salesDate),getDate())%365)>275 ");
+			lSQL.Append("  and (DATEDIFF(day,isnull(ci.expire_date,ci.salesDate),getDate())%365)<361 ");
+
 			lSQL.Append("   and ci.id not in  ");
 			lSQL.Append("   ( ");
 			lSQL.Append("  select car_id from user_assign where assign_role != '已关闭' ");
@@ -700,6 +722,10 @@ namespace hxyd_biz
 			lSQL.Append("     datediff(day,ci.keep_date,GETDATE()), ");
 			lSQL.Append("     ci.salesdate, ");
 			lSQL.Append("     '' as assign_data,");
+			lSQL.Append("     null as expire_date, ");    //保险到期日
+			lSQL.Append("     null as insuranceCompany,");//保险公司
+			lSQL.Append("     null as userName, ");    //邀约人
+			lSQL.Append("     '' as assign_data, ");
 			lSQL.Append("     '未分配' as assign_type, ");
 			lSQL.Append("     '未分配' as assign_role,");
 			lSQL.Append("     '' as  username ");
@@ -713,6 +739,7 @@ namespace hxyd_biz
 			}
 			
 			lSQL.Append("   and (datediff(day,ci.keep_date,GETDATE()))*ci.average_mileage>bi.mileage ");
+			lSQL.Append("   and ci.salesDate is not null ");
 			lSQL.Append("   and ci.id not in  ");
 			lSQL.Append("   ( ");
 			lSQL.Append("  select car_id from user_assign where assign_role != '已关闭' ");

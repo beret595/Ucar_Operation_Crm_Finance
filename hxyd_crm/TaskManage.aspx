@@ -50,21 +50,28 @@
 										<input id="chkSelect" type="checkbox" runat="server" NAME="chkSelect">
 									</ItemTemplate>
 								</asp:TemplateColumn>
-								<asp:BoundColumn DataField="personName" HeaderText="客户"></asp:BoundColumn>
+								<asp:BoundColumn DataField="personName" HeaderText="客户" ItemStyle-Width="10%">
+								
+								</asp:BoundColumn>
 								<asp:BoundColumn DataField="brandNameCN" HeaderText="品牌"></asp:BoundColumn>
 								<asp:BoundColumn DataField="car_model" HeaderText="车型"></asp:BoundColumn>
 								<asp:BoundColumn DataField="licensePlate" HeaderText="车牌"></asp:BoundColumn>
 								<asp:BoundColumn DataField="average_mileage" HeaderText="平均里程"></asp:BoundColumn>
 								<asp:BoundColumn DataField="curr_mileage" HeaderText="当前里程"></asp:BoundColumn>
-								<asp:BoundColumn DataField="mileage" HeaderText="维护里程"></asp:BoundColumn>
-								<asp:BoundColumn DataField="keep_date" HeaderText="生成日期"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_data" HeaderText="分配日期"></asp:BoundColumn>
-								<asp:BoundColumn DataField="username" HeaderText="接受人"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_type" HeaderText="案件状态"></asp:BoundColumn>
+								<asp:BoundColumn DataField="mileage" HeaderText="维护里程"></asp:BoundColumn>								
 								<asp:BoundColumn DataField="personId" Visible="False"></asp:BoundColumn>
 								<asp:BoundColumn DataField="car_id" Visible="False"></asp:BoundColumn>
-								<asp:BoundColumn DataField="kuhu_no" Visible="False"></asp:BoundColumn>
-								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>								
+								<asp:BoundColumn DataField="kuhu_no" Visible="False"></asp:BoundColumn>								
+								<asp:BoundColumn DataField="expire_date" HeaderText="保险到期"  Visible="False"></asp:BoundColumn>
+								<asp:BoundColumn DataField="insuranceCompany" HeaderText="保险公司"  Visible="False"></asp:BoundColumn>		
+								<asp:BoundColumn DataField="userName" HeaderText="邀约员"  Visible="False"></asp:BoundColumn>
+								<asp:BoundColumn DataField="salesDate" HeaderText="售车日期"  Visible="False" DataFormatString="{0:yyyy-MM-dd}"></asp:BoundColumn>
+								<asp:BoundColumn DataField="assign_data" HeaderText="分配日期"  Visible="False"></asp:BoundColumn>						
+								<asp:BoundColumn DataField="keep_date" HeaderText="生成日期"></asp:BoundColumn>
+								<asp:BoundColumn DataField="assign_data" HeaderText="分配日期"></asp:BoundColumn>								
+								<asp:BoundColumn DataField="assign_type" HeaderText="案件状态"></asp:BoundColumn>
+								<asp:BoundColumn DataField="username" HeaderText="接受人"></asp:BoundColumn>
+								<asp:BoundColumn DataField="assign_role" HeaderText="任务状态"></asp:BoundColumn>	
 								<asp:ButtonColumn Text=" 查 看 " HeaderText="操作" CommandName="View"></asp:ButtonColumn>
 							</Columns>
 						</asp:DataGrid></td>

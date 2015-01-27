@@ -531,7 +531,7 @@ namespace  casey.hxyd_crm.Web.UI
 					
 					
 					float fFees=float.Parse(htbCaseInfo["insuranceFees"].ToString());
-					float fInsurancePoint=int.Parse(htbCaseInfo["insurancePoint"].ToString());
+					float fInsurancePoint=float.Parse(htbCaseInfo["insurancePoint"].ToString());
 					//处理利润
 					DataTable dtTemp =CodeTableHelper.getCodeTable("insurCompanyName");
 					string strRebate = dtTemp.Rows.Find(htbCaseInfo["insuranceCompany"].ToString())["Rebate"].ToString();
@@ -548,7 +548,7 @@ namespace  casey.hxyd_crm.Web.UI
 //					JavaScriptHelper.AlertMessage(this,"本次联系情况与保费不能同时为空，如修改客户信息，请通过客户管理页面进行修改!");
 //					return;
 //				}
-				if(htbCaseInfo["contactState"].ToString()=="续保成功" && ( htbCaseInfo["insuranceFees"].ToString()==string.Empty ||htbCaseInfo["forceInsur"].ToString() !=string.Empty))
+				if(htbCaseInfo["contactState"].ToString()=="续保成功" && ( htbCaseInfo["forceInsur"].ToString()==string.Empty || htbCaseInfo["forceInsur"].ToString()=="0")&&(htbCaseInfo["insuranceFees"].ToString() == string.Empty||htbCaseInfo["insuranceFees"].ToString()=="0"))
 				{
 					JavaScriptHelper.AlertMessage(this,"续保成功，必须填写保费");
 					return;
